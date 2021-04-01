@@ -5,14 +5,14 @@ import {
   Route,
 } from 'react-router-dom';
 
-import donghyunkimLogin from './src/pages/donghyunkim/login/Login';
-import donghyunkimMain from './src/pages/donghyunkim/main/Main';
-import dongeeseoLogin from './src/pages/dongeeseo/login/Login';
-import dongeeseoMain from './src/pages/dongeeseo/main/Main';
-import seriparkLogin from './src/pages/seripark/login/Login';
-import seriparkMain from './src/pages/seripark/main/Main';
-import suhhyungKangLogin from './src/pages/suhhyungKang/login/Login';
-import suhhyungKangMain from './src/pages/suhhyungKang/main/Main';
+import donghyunkimLogin from './pages/donghyunkim/login/Login';
+import donghyunkimMain from './pages/donghyunkim/main/Main';
+import dongeeseoLogin from './pages/dongeeseo/login/Login';
+import dongeeseoMain from './pages/dongeeseo/main/Main';
+import seriparkLogin from './pages/seripark/login/Login';
+import seriparkMain from './pages/seripark/main/Main';
+import suhhyungKangLogin from './pages/suhhyungKang/login/Login';
+import suhhyungKangMain from './pages/suhhyungKang/main/Main';
 
 class Routes extends React.Component {
   render() {
