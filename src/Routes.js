@@ -5,28 +5,30 @@ import {
   Route,
 } from 'react-router-dom';
 
-import donghyunkimLogin from './pages/donghyunkim/login/Login';
-import donghyunkimMain from './pages/donghyunkim/main/Main';
-import dongeeseoLogin from './pages/dongeeseo/login/Login';
-import dongeeseoMain from './pages/dongeeseo/main/Main';
-import seriparkLogin from './pages/seripark/login/Login';
-import seriparkMain from './pages/seripark/main/Main';
-import suhhyungKangLogin from './pages/suhhyungKang/login/Login';
-import suhhyungKangMain from './pages/suhhyungKang/main/Main';
+import teamIndex from './pages/TeamIndex';
+import donghyunkimLogin from './pages/donghyunkim/Login/Login';
+import donghyunkimMain from './pages/donghyunkim/Main/Main';
+import dongeeseoLogin from './pages/dongeeseo/Login/Login';
+import dongeeseoMain from './pages/dongeeseo/Main/Main';
+import seriparkLogin from './pages/seripark/Login/Login';
+import seriparkMain from './pages/seripark/Main/Main';
+import suhhyungKangLogin from './pages/suhhyungKang/Login/Login';
+import suhhyungKangMain from './pages/suhhyungKang/Main/Main';
 
 class Routes extends React.Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path="/donghyunkim/login" component={donghyunkimLogin} />
-          <Route exact path="/donghyunkim/main" component={donghyunkimMain} />
-          <Route exact path="/dongeeseo/login" component={dongeeseoLogin} />
-          <Route exact path="/dongeeseo/main" component={dongeeseoMain} />
-          <Route exact path="/seripark/login" component={seriparkLogin} />
-          <Route exact path="/seripark/main" component={seriparkMain} />
-          <Route exact path="/suhhyungKang/login" component={suhhyungKangLogin} />
-          <Route exact path="/suhhyungKang/main" component={suhhyungKangMain} />
+          <Route exact path= "/" component={teamIndex} />
+          <Route exact path="/logindh" component={donghyunkimLogin} />
+          <Route exact path="/maindh" component={donghyunkimMain} />
+          <Route exact path="/loginsd" component={dongeeseoLogin} />
+          <Route exact path="/mainsd" component={dongeeseoMain} />
+          <Route exact path="/loginsp" component={seriparkLogin} />
+          <Route exact path="/mainsp" component={seriparkMain} />
+          <Route exact path="/loginsyeongii" component={suhhyungKangLogin} />
+          <Route exact path="/mainsyeongii" component={suhhyungKangMain} />
         </Switch>
       </Router>
     )
