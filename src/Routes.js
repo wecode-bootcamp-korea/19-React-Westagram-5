@@ -19,14 +19,14 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/donghyunkim/login" component={donghyunkimLogin} />
-          <Route exact path="/donghyunkim/main" component={donghyunkimMain} />
-          <Route exact path="/dongeeseo/login" component={dongeeseoLogin} />
-          <Route exact path="/dongeeseo/main" component={dongeeseoMain} />
-          <Route exact path="/seripark/login" component={seriparkLogin} />
-          <Route exact path="/seripark/main" component={seriparkMain} />
-          <Route exact path="/suhhyungKang/login" component={suhhyungKangLogin} />
-          <Route exact path="/suhhyungKang/main" component={suhhyungKangMain} />
+          <Route exact path="/logindh" component={donghyunkimLogin} />
+          <Route exact path="/maindh" component={donghyunkimMain} /> 
+          <Route exact path="/loginsd" component={dongeeseoLogin} />
+          <Route exact path="/mainsd" component={dongeeseoMain} />
+          <Route exact path="/loginsp" component={seriparkLogin} />
+          <Route exact path="/mainsp" component={seriparkMain} />
+          <Route exact path="/loginsyeongii" component={suhhyungKangLogin} />
+          <Route exact path="/mainsyeongii" component={suhhyungKangMain} />
         </Switch>
       </Router>
     )
