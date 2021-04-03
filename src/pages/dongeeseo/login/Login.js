@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import './Login.scss';
 
 
-
-
 class Login extends React.Component {
 
     goToMain = () => {

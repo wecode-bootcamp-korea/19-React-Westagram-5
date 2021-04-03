@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;   
@@ -26,10 +25,6 @@
 
 $theme-color: rgb(219, 219, 219);
 
-body {
-  margin: auto;
-}
-
 header {
   width: 100%;
   height: 47px;
@@ -43,24 +38,35 @@ header {
     height: 47px;
     padding: 0 0 0 40px;
     display: flex;
-    justify-content: flex-start; 
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
 
     .mainLogo {
       width: 270px;
       height: 30px;
       font-family: 'Lobster', cursive;
-      font-size: 23px;
+      font-size: 25px;
       justify-content: flex-start;
       margin: 0px;
     }
 
     .searchBar {
       width: 200px;
+      margin-left: auto;
+      margin-right: auto;
       display: flex;
       justify-content: center;
       position: relative;
-                        
+        
+      .search {
+        font-size: 11px;
+        color: $theme-color;
+        position: absolute;
+        margin-top: 7px;
+        margin-right: 70px;
+      }
+
       .searchText {
         width: 215px; 
         height: 24px;
@@ -70,14 +76,6 @@ header {
         border: 1px solid $theme-color;
         border-radius: 3px; 
       }
-
-      .fa-search {
-        font-size: 11px;
-        color: $theme-color;
-        position: absolute;
-        margin-top: 7px;
-        margin-right: 70px;
-      }
     }
 
     .navIcon {
@@ -86,35 +84,49 @@ header {
         display: flex;
         flex-direction: row;
         padding-left: 30px;
-          
-        img {
-          width: 22px;
-          height: 22px;
-          border-radius: 50px;
-          margin-top: 2px;
-        }
+        
+        a {
+          text-decoration: none;
+          img {
+            width: 22px;
+            height: 22px;
+            border-radius: 50px;
+            margin-top: 2px;
+          }
 
-        a {text-decoration: none;}
+          .home {
+            font-size: 20px;  
+            padding-top: 3px;
+            white-space: nowrap;
+            margin-right: 20px;                     
+          }
 
-        i {
-          font-size: 20px;  
-          padding-top: 3px;
-          white-space: nowrap;
-          margin-right: 20px;                     
-        }
+          .paperPlane {
+            @extend .home ;
+          }
+        
+          .compass {
+            @extend .home ;
+          }
+
+          .heart{
+            @extend .home ;
+          } 
+        } 
     }
   }
 }
 
 main {
-  margin: auto;
+  width: auto;
+  height: auto;
   background-color: #FAFAFA;
   position: relative;
   z-index: 1;
 
   section {
     width: 935px;
-    padding-top: 77px;
+    margin-top: 77px;
     display: flex;
     flex-flow: row nowrap;
 
@@ -212,60 +224,60 @@ main {
           }
         }
       }
+    }
 
-      .viewBox {
+    .viewBox {
+      width: 560px;
+      height: 830px;
+      background-color: #ffffff;
+      border: 1px solid $theme-color;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+
+      .writer {
         width: 560px;
-        height: 830px;
-        background-color: #ffffff;
-        border: 1px solid $theme-color;
-        border-radius: 3px;
-        display: flex;
-        flex-direction: column;
-        margin-top: 15px;
+        height: 60px;
 
-        .writer {
-          width: 560px;
-          height: 60px;
+        .userInfo {
+          width: 550px;
+          height: 55px;
+          padding: 7px;
+          margin: 0px;
+          display: flex;
+          flex-direction: row;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-          .userInfo {
-            width: 550px;
-            height: 55px;
-            padding: 7px;
+          button {
+            width: 42px;
+            height: 42px;
+            background-color: #ffffff;
+            border: none;
+            outline: none;
             margin: 0px;
-            display: flex;
-            flex-direction: row;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
 
-            .goMypage {
+            .storySmall {
               width: 42px;
               height: 42px;
-              background-color: #ffffff;
-              border: none;
-              outline: none;
-              margin: 0px;
-              position: relative;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              display: flex;   
 
-              .storySmall {
+              .smallCanvas {
                 width: 42px;
                 height: 42px;
-                display: flex;   
+                position: absolute;
+                left: -9px;
+              }
 
-                .smallCanvas {
-                  width: 42px;
-                  height: 42px;
-                  position: absolute;
-                  left: -9px;
-                }
-
-                span{
-                  width: 32px;
-                  height: 32px;
-                }
+              span{
+                width: 32px;
+                height: 32px;
 
                 img {
                   width: 32px;
@@ -273,281 +285,282 @@ main {
                   border-radius: 70px;
                   position: absolute;
                   left: 5px;
-                  top: 5px;    
-                }
-              }
-            }
-
-            .userName {
-              width: 500px;
-              height: 36px;
-              position: relative;
-
-              .linkName {
-                font-style: bold;
-                font-size: 13px;
-                width: 117px;
-                height: 15px;
-                position: absolute;
-                left: 12px;
-              }
-
-              .linkMap {
-                font-size: 11px;
-                width: 100px;
-                height: 15px;
-                position: absolute;
-                left: 12px;
-                top: 20px;
+                  top: 5px;  
+                }  
               }
             }
           }
+
+          .userName {
+            width: 500px;
+            height: 36px;
+            position: relative;
+
+            .linkName {
+              font-style: bold;
+              font-size: 13px;
+              width: 117px;
+              height: 15px;
+              position: absolute;
+              left: 12px;
+            }
+
+            .linkMap {
+              font-size: 11px;
+              width: 100px;
+              height: 15px;
+              position: absolute;
+              left: 12px;
+              top: 20px;
+            }
+          }
+          
         }
-        
-        .mainImg {
+      }
+      
+      .mainImg {
+        width: 560px;
+        height: 560px;
+        position: relative;
+      
+        .bigImg img {
           width: 560px;
           height: 560px;
-          position: relative;
-        
-          .bigImg img {
-            width: 560px;
-            height: 560px;
-          }
+        }
 
-          .tagBtn {
+        .tagBtn {
+          width: 28px;
+          height: 28px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+
+          .tagIcon {
             width: 28px;
             height: 28px;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute;
-            bottom: 8px;
-            left: 8px;
-
-            .tagIcon {
-              width: 28px;
-              height: 28px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            
-              .fa-user-circle {
-                font-size: 25px;
-              }
+          
+            .fa-user-circle {
+              font-size: 25px;
             }
           }
         }
+      }
 
-        .talkBox {
-          width: 560px;
-          height: 203px;
-          margin-left: 2px;
-          padding: 0 10px;
-          display: flex;
-          flex-direction: column;
-          position: relative;
+      .talkBox {
+        width: 560px;
+        height: 203px;
+        margin-left: 2px;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
 
-          .talkIcon {
-            width: 520px;
-            height: 40px;
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-
-            span {
-              width: 40px;
-              height: 40px;
-              display: flex;
-              justify-content: flex-start;
-              margin: 0px;
-              align-items: center;
-              position: relative;
-            }
-
-            span.bookmarkIcon {
-              padding-left: 388px;
-            }
-
-            button {
-              width: 24px;
-              height: 24px;
-              align-items: center;
-              margin: 0px;
-            }
-
-            i {
-              font-size: 22px;  
-              white-space: nowrap;
-              align-items: center;
-            }
-          }
-
-          .likeBox {
-            width: 520px;
-            height: 18px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            font-size: 13px;
-            font-style: bold;
-            margin-left: 8px;
-          }
-
-          .likeBox a {margin: 0px;}
-
-          .talkUsers {
-            width: 540px;
-            height: 66px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            font-size: 13px;
-
-            .mainTalker {
-              width: 540px;
-              height: 18px;
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              padding-left: 8px; 
-
-              .linkUser {
-                width: auto;
-                height: auto;
-                font-style: bold;
-                margin: 0px;
-              }
-
-              .userWrite {
-                width: 135px;
-                height: 18px;
-                font-size: 12px;
-                margin: 0 0 0 5px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-              }
-
-              .moreText {
-                width: 32px;
-                height: 18px;
-                margin: 0 0 0 3px;
-                display: flex;
-                align-items: center;
-              }
-            }
-
-            .viewAllComment {
-              width: 540px;
-              height: 18px;
-              color: $theme-color;
-              padding: 0 0 0 9px;
-
-              a {
-                width: 540px;
-                height: 18px;
-                color: rgb(142, 142, 142);
-              }
-            }
-            
-            .commenter {
-              width: 540px;
-              height: 18px;
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              padding-left: 8px; 
-              position: relative;
-
-              .linkFriend {
-                width: auto;
-                height: auto;
-                margin: 0 5px 0 5px;
-
-                a {
-                  width: auto;
-                  height: auto;
-                  color: rgb(51, 94, 136);
-                }
-              }
-         
-              .heartIcon {
-                width: 20px;
-                height: 18px;
-                margin: 0px;
-                position: absolute;
-                right: 5px;
-              }
-
-              button {
-                width: 20px;
-                height: 18px;
-              }
-            }
-          }
-        }
-
-        .talkDateBox {
-          width: 540px;
-          height: 19px;
-          display: flex;
-          justify-content: flex-start;
-          font-size: 11px;
-          color: rgb(142, 142, 142);
-          margin: 0px;
-
-          p {margin: 12px 0 0 10px;}
-        }
-
-        .addComment {
-          width: 560px;
+        .talkIcon {
+          width: 520px;
           height: 40px;
-          border-top: 1px solid $theme-color;
+          margin: 0;
           display: flex;
           flex-direction: row;
           justify-content: flex-start;
           align-items: center;
-          margin: 20px 0 0 0 ;
-          position: absolute;
-          top: 145px;
-          left: -3px;
 
-          .smileIcon {
+          span {
             width: 40px;
             height: 40px;
+            display: flex;
+            justify-content: flex-start;
             margin: 0px;
-            padding: 10px;
-            
-            button {
-              width: 24px;
-              height: 24px;
-              padding: 0px;
-
-              i {font-size: 20px;}
-            }
+            align-items: center;
+            position: relative;
           }
-          .addTextBox {
-            width: 450px;
+
+          span.bookmarkIcon {
+            padding-left: 388px;
+          }
+
+          button {
+            width: 24px;
+            height: 24px;
+            align-items: center;
+            margin: 0px;
+          }
+
+          i {
+            font-size: 22px;  
+            white-space: nowrap;
+            align-items: center;
+          }
+        }
+
+        .likeBox {
+          width: 520px;
+          height: 18px;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          font-size: 13px;
+          font-style: bold;
+          margin-left: 8px;
+        }
+
+        .likeBox a {margin: 0px;}
+
+        .talkUsers {
+          width: 540px;
+          height: 66px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          font-size: 13px;
+
+          .mainTalker {
+            width: 540px;
             height: 18px;
             display: flex;
-            align-items: center;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding-left: 8px; 
 
-            input{
-              width: 450px;
+            .linkUser {
+              width: auto;
+              height: auto;
+              font-style: bold;
+              margin: 0px;
+            }
+
+            .userWrite {
+              width: 135px;
               height: 18px;
-              border: none;
-              outline: none;
+              font-size: 12px;
+              margin: 0 0 0 5px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+
+            .moreText {
+              width: 32px;
+              height: 18px;
+              margin: 0 0 0 3px;
+              display: flex;
+              align-items: center;
+            }
+          }
+
+          .viewAllComment {
+            width: 540px;
+            height: 18px;
+            color: $theme-color;
+            padding: 0 0 0 9px;
+
+            a {
+              width: 540px;
+              height: 18px;
               color: rgb(142, 142, 142);
             }
           }
           
-          .addTextBtn button {
-            color:rgb(179, 223, 252)
+          .commenter {
+            width: 540px;
+            height: 18px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding-left: 8px; 
+            position: relative;
+
+            .linkFriend {
+              width: auto;
+              height: auto;
+              margin: 0 5px 0 5px;
+
+              a {
+                width: auto;
+                height: auto;
+                color: rgb(51, 94, 136);
+              }
+            }
+       
+            .heartIcon {
+              width: 20px;
+              height: 18px;
+              margin: 0px;
+              position: absolute;
+              right: 5px;
+            }
+
+            button {
+              width: 20px;
+              height: 18px;
+            }
           }
+        }
+      }
+
+      .talkDateBox {
+        width: 540px;
+        height: 19px;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 11px;
+        color: rgb(142, 142, 142);
+        margin: 0px;
+
+        p {margin: 12px 0 0 10px;}
+      }
+
+      .addComment {
+        width: 560px;
+        height: 40px;
+        border-top: 1px solid $theme-color;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 20px 0 0 0 ;
+        position: absolute;
+        top: 145px;
+        left: -3px;
+
+        .smileIcon {
+          width: 40px;
+          height: 40px;
+          margin: 0px;
+          padding: 10px;
+          
+          button {
+            width: 24px;
+            height: 24px;
+            padding: 0px;
+
+            i {font-size: 20px;}
+          }
+        }
+        .addTextBox {
+          width: 450px;
+          height: 18px;
+          display: flex;
+          align-items: center;
+
+          input{
+            width: 450px;
+            height: 18px;
+            border: none;
+            outline: none;
+            color: rgb(142, 142, 142);
+          }
+        }
+        
+        .addTextBtn button {
+          color:rgb(179, 223, 252)
         }
       }
     }
   }
-}    
+}
