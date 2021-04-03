@@ -6,8 +6,8 @@ class Main extends Component {
     render() {
         return(
             <>
-            <Nav />
-            <Feeds />
+                <Nav />
+                <Feeds />
             </>
         )
     }

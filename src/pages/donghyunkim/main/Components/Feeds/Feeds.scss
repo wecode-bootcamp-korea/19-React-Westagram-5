@@ -42,6 +42,9 @@ body{
             flex-direction: column;
             list-style: none;
             margin-left: 10px;
+            > button{
+                background-color: white;
+            }
             img{
                 width: 56px;
                 height: 56px;
@@ -100,6 +103,9 @@ body{
 
     .feedImg{
         width: 612px;
+    }
+    button {
+        background-color: white;
     }
 
 

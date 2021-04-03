@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import '../../../styles/reset.scss'
 import './Login.scss'
 
@@ -11,7 +12,9 @@ class Login extends Component {
                     <h1>Westagram</h1>
                     <input class="sectionInput-width" id="userId-input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일"/>
                     <input class="sectionInput-width" id="passwd-input"  type="password" placeholder="비밀번호"/>
-                    <button class="sectionInput-width" id="login-button">로그인</button>
+                    <Link to="/Maindh">
+                        <button class="sectionInput-width" id="login-button">로그인</button>
+                    </Link>
                     <div class="sectionInput-width orBox">
                         <div></div>
                         <span>또는</span>
