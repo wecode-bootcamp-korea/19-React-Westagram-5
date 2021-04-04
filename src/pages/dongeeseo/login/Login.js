@@ -26,7 +26,7 @@ class Login extends React.Component {
             </form>
             <div className = "orLine">
                 <div className = "sideLine"></div>
-                <div className = "orLetter"> OR </div>
+                <div className = "orLetter"> <Link to="/Mainsd">OR</Link> </div>
                 <div className = "sideLine"></div>
             </div>
             <nav>
@@ -37,7 +37,7 @@ class Login extends React.Component {
                     </a>
                 </div>
                 <div className = "forgotPw">
-                    <Link to="/Main">Forgot password?</Link>
+                    <Link to="/Mainsd">Forgot password?</Link>
                 </div>
             </nav>
         </main>    

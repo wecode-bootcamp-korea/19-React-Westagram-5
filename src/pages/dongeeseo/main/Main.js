@@ -3,6 +3,14 @@ import './Main.scss'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faSearch, faHome, faUserCircle, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane, faCompass, faHeart, faComment, faBookmark, faSmile } from '@fortawesome/free-regular-svg-icons';
+import olaf from 'images/donz/olaf.PNG'
+import bicycle from 'images/donz/bicycle.jpg'
+import cafe from 'images/donz/cafe.jpg'
+import cat from 'images/donz/cat.jpg'
+import deco from 'images/donz/deco.jpg'
+import surfing from 'images/donz/surfing.jpg'
+import jeju from 'images/donz/jeju.jpg'
+import madeleine from 'images/donz/madeleine.jpg'
 
 class Main extends Component {
   render() {
@@ -20,7 +28,7 @@ class Main extends Component {
                     <a href = "https://reactjs.org"><FontAwesomeIcon icon={faPaperPlane} className="paperPlane" /></a>
                     <a href = "https://reactjs.org"><FontAwesomeIcon icon={faCompass} className="compass" /></a>
                     <a href = "https://reactjs.org"><FontAwesomeIcon icon={faHeart} className="heart" /></a>
-                    <a href = "https://reactjs.org"><img className = "myPhoto" src = "../../../styles/images/dongeeseo/olaf.PNG" alt = "no img" /></a>
+                    <a href = "https://reactjs.org"><img className = "myPhoto" src = {olaf} alt = "no img" /></a>
                 </div>
             </nav>
         </header>    
@@ -35,7 +43,7 @@ class Main extends Component {
                                     <div className = "storySmall">
                                       <canvas className = "storyCanvas"></canvas>
                                         <span className ="storyBoxCircle">
-                                          <img  alt = "no img" className = "storyImg" src = "../../../styles/images/dongeeseo/hoian.jpg" />
+                                          <img  alt = "no img" className = "storyImg" src = {require('images/donz/hoian.jpg')} />
                                         </span>
                                     </div>
                                     <div className = "storyUser">Hoi!an</div>  
@@ -48,7 +56,7 @@ class Main extends Component {
                                     <div className = "storySmall">
                                       <canvas className = "storyCanvas"></canvas>
                                       <span className ="storyBoxCircle">
-                                        <img alt = "no img" className = "storyImg" src = "img/bicycle.jpg"/> 
+                                        <img alt = "no img" className = "storyImg" src = {bicycle}/> 
                                       </span>
                                     </div>
                                     <div className = "storyUser">rider_209</div>  
@@ -61,7 +69,7 @@ class Main extends Component {
                                     <div className = "storySmall">
                                       <canvas className = "storyCanvas"></canvas>
                                       <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = "img/cafe.jpg" />
+                                          <img alt = "no img" className = "storyImg" src = {cafe} />
                                       </span>
                                     </div>
                                     <div className = "storyUser">coffeeNcake</div>  
@@ -74,7 +82,7 @@ class Main extends Component {
                                     <div className = "storySmall">
                                       <canvas className = "storyCanvas"> </canvas>
                                       <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = "img/cat.jpg" /> 
+                                          <img alt = "no img" className = "storyImg" src = {cat} /> 
                                       </span>
                                     </div>
                                     <div className = "storyUser">imasupercute</div>  
@@ -87,7 +95,7 @@ class Main extends Component {
                                     <div className = "storySmall">
                                       <canvas className = "storyCanvas"></canvas>
                                       <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = "img/deco.jpg" /> 
+                                          <img alt = "no img" className = "storyImg" src = {deco} /> 
                                       </span>
                                     </div>
                                     <div className = "storyUser">cafe_Palbang</div>  
@@ -100,7 +108,7 @@ class Main extends Component {
                                     <div className = "storySmall">
                                       <canvas className = "storyCanvas"></canvas>
                                       <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = "img/olaf.PNG" /> 
+                                          <img alt = "no img" className = "storyImg" src = {olaf} /> 
                                       </span>
                                     </div>
                                     <div className = "storyUser">doUwanna</div>  
@@ -114,7 +122,7 @@ class Main extends Component {
                                         <canvas className = "storyCanvas">  
                                         </canvas>
                                       <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = "img/surfing.jpg" /> 
+                                          <img alt = "no img" className = "storyImg" src = {surfing} /> 
                                       </span>
                                     </div>
                                     <div className = "storyUser">hamsik_surf</div>  
@@ -128,7 +136,7 @@ class Main extends Component {
                                         <canvas className = "bigCanvas">  
                                         </canvas>
                                       <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = "img/violet.jpg" /> 
+                                          <img alt = "no img" className = "storyImg" src = {jeju} /> 
                                       </span>
                                     </div>
                                     <div className = "storyUser">donZ_209</div>  
@@ -145,7 +153,7 @@ class Main extends Component {
                                 <canvas className = "smallCanvas">
                                 </canvas>
                                 <span className = "smallImg">
-                                    <img className = "smallImg" src = "img/olaf.PNG" alt = "no img" />
+                                    <img className = "smallImg" src = {olaf} alt = "no img" />
                                 </span>
                             </div>
                           </button>
@@ -166,7 +174,7 @@ class Main extends Component {
                       </div>                        
                       <div className = "mainImg">
                         <div className = "bigImg">
-                            <img src = "../../../styles/images/dongeeseo/madeleine.jpg" alt= "no img" />
+                            <img src = {madeleine} alt= "no img" />
                         </div>                            
                         <button className = "tagBtn">
                             <div className = "tagIcon">
