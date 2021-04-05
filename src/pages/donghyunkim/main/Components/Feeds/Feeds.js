@@ -1,7 +1,60 @@
 import React, { Component } from 'react'
 import './Feeds.scss'
 
+
+
 class Feeds extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            disValue:true
+        }
+    }
+
+    textareaKeyDown = (e) => {
+        if(e.keyCode === 13){
+            e.preventDefault();
+        }
+    }
+
+    textareaKeyUp = (e) => {
+        const commentValue = document.querySelector('.commentUpBox textarea');
+        const commentUploadButton = document.querySelector('#commentUpload');
+            
+        if(commentValue.value.length > 0){
+            this.setState({
+                disValue:false
+            });
+            commentUploadButton.style.color = 'blue';
+            commentUploadButton.style.cursor = 'pointer';
+            e.stopPropagation();
+        }else{
+            commentUploadButton.style.color = 'skyblue';
+            commentUploadButton.style.cursor = 'auto';
+            this.setState({
+                disValue:true
+            });
+        }
+    }
+
+    commentUp = (e) => {
+        // alert(commentValue.value.length);
+        const myId = 'kdh24';
+        const commentValue = document.querySelector('.feedComment>ul');
+        const newTagLi = document.createElement("li");
+        const newTagP = document.createElement("p");
+        const newTagA = document.createElement("a");
+
+        let getCommentText = document.querySelector('form textarea');
+        newTagA.innerHTML = myId + " ";
+        newTagP.appendChild(newTagA);
+        newTagP.append(getCommentText.value);
+        console.log(getCommentText);
+        getCommentText.value = "";
+
+        newTagLi.appendChild(newTagP);
+        commentValue.appendChild(newTagLi);
+    }
     render() {
         return(
         <>
@@ -77,8 +130,14 @@ class Feeds extends Component {
                                 <button>
                                     <i class="far fa-smile fa-5x"></i>
                                 </button>
-                                <textarea type="text" placeholder="댓글 달기..." ></textarea>
-                                <button id="commentUpload" type="button" disabled>
+                                <textarea type="text" placeholder="댓글 달기..." 
+                                onKeyDown={this.textareaKeyDown}
+                                onKeyUp={this.textareaKeyUp}
+                                ></textarea>
+                                <button id="commentUpload" type="button" disabled
+                                onClick={this.commentUp}
+                                disabled={this.state.disValue}
+                                >
                                     게시
                                 </button>
                             </form>

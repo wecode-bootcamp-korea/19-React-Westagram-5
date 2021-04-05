@@ -26,6 +26,7 @@ nav{
             width: 360px;
             height: 100%;
             line-height: 54px;
+            font-size: 1.6em;
             font-family: 'Lobster', cursive;
         }
     }
@@ -41,6 +42,8 @@ nav{
         height: 28px;
         border: 1px solid #DBDBDB;
         background-color: #FAFAFA;
+        padding-left: 26px;
+        z-index: 1;
     }
     div{
         width: 213px;
@@ -58,10 +61,13 @@ nav{
             height: 12px;
             background-color: #FAFAFA;
             cursor: text;
+            z-index: 2;
         }
         span{
             margin-left: 5px;
             background-color: #FAFAFA;
+            opacity: 0.5;
+            z-index: 2;
         }
     }
 }
