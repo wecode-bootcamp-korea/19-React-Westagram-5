@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Nav.scss'
+import { Link } from 'react-router-dom'
 
 class Nav extends Component {
 
@@ -25,7 +26,9 @@ class Nav extends Component {
         <>
             <nav>
                 <div class="mainWidth">
-                    <h1>Westagram</h1>
+                    <Link to="/logindh">
+                        <h1>Westagram</h1>
+                    </Link>
                     <div id="searchBar">
                         <input type="text"
                         onClick={this.clickSearchBox}

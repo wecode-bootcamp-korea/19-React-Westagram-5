@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import './Feeds.scss'
 
-
-
 class Feeds extends Component {
     constructor(props){
         super(props);
         this.state = {
-            disValue:true
+            buttonOptin:[
+                {disValue:true, color:'blue', cursor:'pointer'},
+                {disValue:false, color:'skyblue', cursor:'auto'}
+            ]
         }
     }
 
@@ -16,7 +17,7 @@ class Feeds extends Component {
             e.preventDefault();
         }
     }
-
+/* 
     textareaKeyUp = (e) => {
         const commentValue = document.querySelector('.commentUpBox textarea');
         const commentUploadButton = document.querySelector('#commentUpload');
@@ -35,8 +36,9 @@ class Feeds extends Component {
                 disValue:true
             });
         }
-    }
-
+    } 
+*/
+/* 
     commentUp = (e) => {
         // alert(commentValue.value.length);
         const myId = 'kdh24';
@@ -54,8 +56,16 @@ class Feeds extends Component {
 
         newTagLi.appendChild(newTagP);
         commentValue.appendChild(newTagLi);
-    }
+    } */
     render() {
+        let commentList = [];
+        let commentArr = this.props.commentArr;
+        let i = 0;
+        while(i < commentArr.length){
+            commentList.push(<li key={commentArr[i].id}><p><a>{commentArr[i].userId}</a>{commentArr[i].content}</p></li>);
+            i = i + 1;
+        }
+
         return(
         <>
             <main>
@@ -118,8 +128,7 @@ class Feeds extends Component {
                         </div>
                         <div class="feedComment">
                             <ul>
-                                <li><p><a>_apink_pinkpanda </a>Apink🐼💖❤️💙💜 #APINK #에이핑크 #CHORONG #박초롱 #BOMI #윤보미 #EUNJI #정은지 #NAEUN #손나은 #NAMJOO #김남주 #HAYOUNG #오하영</p></li>
-                                <li><p><a>i_want.apink </a>YAAAAAAAAAAAA QUE RAINHAS ❤️🙌 MEU DEUS QUE LINDAAAS ELAS E TÃO MARAVILHOSAS 😔❤ MAIS EU NÃO AGUENTO VER ISSO PQ EU VOU DESMAIAR KSKSKS</p></li>
+                                {commentList}
                             </ul>
                         </div>
                         <div class="feedTime">
