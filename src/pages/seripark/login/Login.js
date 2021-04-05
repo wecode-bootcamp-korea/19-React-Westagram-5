@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
 import './Login.scss';
+import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 
 class Login extends Component {
+  
+    goToMain = () => {
+    this.props.history.push('/mainsp');
+    }
+
     render() {
       return (
-        <div class="login_background">
-          <div class="container">
-            <div class="login_logo_wrap">
-              <h1 class="login_logo_title">Instagram</h1>
+        <div className="loginBackground">
+          <div className="container">
+            <div className="loginLogoWrap">
+              <h1 className="loginLogoTitle">Instagram</h1>
             </div>
-            <form id="login_form" method="get">
-              <input type="text" id="id_text" name="login_id_text" placeholder="전화번호,사용자 이름 또는 이메일"/>
-              <input type="text" id="pw_text" name="login_pw_text" placeholder="비밀번호"/>
-              <input type="submit" id="login_btn" value="로그인"/>
+            <form id="loginForm" method="get">
+              <input type="text" id="idText" name="login_id_text" placeholder="전화번호,사용자 이름 또는 이메일"/>
+              <input type="text" id="pwText" name="login_pw_text" placeholder="비밀번호"/>
+              <button id = "loginBtn" type = "button" onClick={this.goToMain}>로그인</button>
             </form>
             <footer>
-              <a href="./" class="find_pw">비밀번호를 잊으셨나요?</a>
+              <Link to="/Main"  className="findPw">비밀번호를 잊으셨나요?</Link>
             </footer>
           </div>
         </div>      
@@ -24,7 +32,7 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default withRouter(Login)
 
 
 
