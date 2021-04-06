@@ -4,6 +4,12 @@
 *{
     box-sizing:border-box;
 }
+.colorWhite{
+    background-color:grey;
+}
+.colorRed{
+    background-color: red;
+}
 .mainContents{
     width:100%;
     height:100%;
@@ -11,7 +17,6 @@
 .contentOne{
     width:70%;
     height:100%;
-    border:1px solid black;
     padding:3.5rem;
 }
 .navigation{
@@ -37,8 +42,8 @@
             justify-content: center;
             align-items: center;
             img{
-                width:70px;
-                height:50px;
+                width:80%;
+                height:60%;
                 border-radius: 50%;
                 padding:0 0.5rem;
             }
@@ -131,18 +136,17 @@
         background-color:yellow;
         width:100%;
         height:30%;
-        input{
+        .commentInput{
             width:100%;
             height:100%;
             border:0;
         }
-        button{
+        .commentBtn{
             width:10%;
             height:30%;
             position:absolute;
             top:9.5rem;
             right:0;
-            background-color:transparent;
             color:blue;
             border:0.7px solid #c0c0c0;
         }

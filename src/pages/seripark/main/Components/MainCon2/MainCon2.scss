@@ -1,22 +1,27 @@
-section{
-    margin:95px auto;
-    width:80vw;
-    height:100vh;
-    position:relative;
-    left:2%;
-    display:flex;
-}
-
-.content_two{
+@import "../../../../../styles/common.scss";
+@import "../../../../../styles/reset.scss";
+.contentTwo{
     position: fixed;
-    width:20vw;
-    left: 80%;
-    top: 13.5%;
-    margin-left: -10vw;
-    .user_info{
+    background-color:$PrimaryWhite;
+    width:28%;
+    right:2%;
+    top: 14.5%;
+    .userInfo{
+        height:8rem;
         display:flex;
         margin-bottom:30px;
         align-items: center;
+        .spanWrap{
+            display:flex;
+            flex-direction: column;
+            span{
+                margin-bottom: 8px;
+                margin-left:30px;
+                &:first-child{
+                    font-weight:600;
+                }
+            }
+        }
     }
     img{
         display: block;
@@ -28,27 +33,41 @@ section{
         margin-left:20px;
     }
 }
+.wrapForRecommend{
 
-
-.recommended_users{
+}
+.recommendedUsers{
     display:flex;
     justify-content: space-between;
-    img{
-        width:60px;
-        height:60px;
-        border-radius:50%;
-    }
-    button{
-        white-space: nowrap;
-        width:100px;
-        height:100px;
-        background-color:transparent;
-        border:0;
-        color:blue;
+    // img{
+    //     width:60px;
+    //     height:60px;
+    //     border-radius:50%;
+    // }
+    // button{
+    //     white-space: nowrap;
+    //     width:100px;
+    //     height:100px;
+    //     background-color:transparent;
+    //     border:0;
+    //     color:blue;
+    // }
+}
+.recommended{
+    .recommendedUsers{
+        margin:0;
+        padding:0;
+        padding-bottom:2rem;
+        img{
+            width:3rem;
+            height:3rem;
+        }
+        .ruInnerWrap{
+            padding-top:1rem;
+        }
     }
 }
-
-.recommended_users_info{
+.recommendedUsersInfo{
     display: flex;
     justify-content: space-between;
     margin-bottom:5px;
@@ -57,14 +76,6 @@ section{
     }
 }
 
-.r_u_inner_wrap{
-    display:flex;
-    /* flex-direction: column; */
-}
-.recommended li{
-    padding:10px;
-}
-
 footer{
-    margin-top:30px;
+    margin-top:5rem;
 }

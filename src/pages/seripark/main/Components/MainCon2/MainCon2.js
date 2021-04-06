@@ -1,48 +1,54 @@
 import React, {Component} from 'react';
+import '../MainCon2/MainCon2.scss';
+import Catdog from "images/seripark/images0.jpg";
+import Cartoon from "images/seripark/images.jpg";
 
 class MainCon2 extends Component{
     render(){
       return(
 
-        <article class="content_two">
+        <article className="contentTwo">
             
-            <div class="user_info">
-                {/* <img src="./image/download2.jpg" alt="#"> */}
-                <p>morimori_32<br/>golf player</p>
+            <div className="userInfo">
+                 <img src={Catdog} alt="#"/> 
+                 <div class="spanWrap">
+                     <span>morimori32</span>
+                     <span>golf player</span>
+                 </div>
             </div>
-            <p class="recommended_users_info">
+            <p className="recommendedUsersInfo">
                 <span>회원님을 위한 추천</span>
                 <span>모두보기</span>
             </p>
-            <div class="wrap_for_recommend">
-                <ul class="recommended">
-                    <li class="recommended_users">
-                        <div class="r_u_inner_wrap">
-                            {/* <img src="./image/download3.jpg" alt="#"> */}
+            <div className="wrapForRecommend">
+                <ul className="recommended">
+                    <li className="recommendedUsers">
+                        <img src={Cartoon} alt="#"/> 
+                        <div className="ruInnerWrap">
                             <span>uvvin</span>
                             <span>회원님을 위한 추천</span>
                         </div>
                         <button type="submit" form="form" value="Submit">팔로우</button>
                     </li>
-                    <li class="recommended_users">
-                        {/* <img src="./image/download3.jpg" alt="#"> */}
-                        <div class="r_u_inner_wrap">
+                    <li className="recommendedUsers">
+                        <img src={Cartoon} alt="#"/> 
+                        <div className="ruInnerWrap">
                             <span>uvvin</span>
                             <span>회원님을 위한 추천</span>
                         </div>
                         <button type="submit" form="form" value="Submit">팔로우</button>
                     </li>
-                    <li class="recommended_users">
-                        {/* <img src="./image/download3.jpg" alt="#"> */}
-                        <div class="r_u_inner_wrap">
+                    <li className="recommendedUsers">
+                        <img src={Cartoon} alt="#"/> 
+                        <div className="ruInnerWrap">
                             <span>uvvin</span>
                             <span>회원님을 위한 추천</span>
                         </div>
                         <button type="submit" form="form" value="Submit">팔로우</button>
                     </li>
-                    <li class="recommended_users">
-                        {/* <img src="./image/download3.jpg" alt="#"> */}
-                        <div class="r_u_inner_wrap">
+                    <li className="recommendedUsers">
+                        <img src={Cartoon} alt="#"/> 
+                        <div className="ruInnerWrap">
                             <span>uvvin</span>
                             <span>회원님을 위한 추천</span>
                         </div>

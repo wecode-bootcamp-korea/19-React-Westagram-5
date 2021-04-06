@@ -1,552 +1,552 @@
-* {
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;   
-    margin-left: auto;
-    margin-right: auto;
+// * {
+//     box-sizing: border-box;
+//     font-family: 'Poppins', sans-serif;   
+//     margin-left: auto;
+//     margin-right: auto;
 
-    ul {
-      list-style: none;
-    }
+//     ul {
+//       list-style: none;
+//     }
 
-    a {
-      text-decoration: none;
-      color: rgb(38, 38, 38);
-    }
+//     a {
+//       text-decoration: none;
+//       color: rgb(38, 38, 38);
+//     }
 
-    button {
-      background: none ;
-      outline: none;
-      border: none;
-    }
-    input {
-      outline: none;    
-    }
-} 
+//     button {
+//       background: none ;
+//       outline: none;
+//       border: none;
+//     }
+//     input {
+//       outline: none;    
+//     }
+// } 
 
-$theme-color: rgb(219, 219, 219);
+// $theme-color: rgb(219, 219, 219);
 
-body {
-  margin: auto;
-}
+// body {
+//   margin: auto;
+// }
 
-header {
-  width: 100%;
-  height: 47px;
-  border-bottom: 1px solid $theme-color;
-  position: fixed;
-  background-color: rgb(255, 255, 255);
-  z-index: 2;
+// header {
+//   width: 100%;
+//   height: 47px;
+//   border-bottom: 1px solid $theme-color;
+//   position: fixed;
+//   background-color: rgb(255, 255, 255);
+//   z-index: 2;
 
-  nav {
-    width: 935px;
-    height: 47px;
-    padding: 0 0 0 40px;
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
+//   nav {
+//     width: 935px;
+//     height: 47px;
+//     padding: 0 0 0 40px;
+//     display: flex;
+//     justify-content: flex-start; 
+//     align-items: center;
 
-    .mainLogo {
-      width: 270px;
-      height: 30px;
-      font-family: 'Lobster', cursive;
-      font-size: 23px;
-      justify-content: flex-start;
-      margin: 0px;
-    }
+//     .mainLogo {
+//       width: 270px;
+//       height: 30px;
+//       font-family: 'Lobster', cursive;
+//       font-size: 23px;
+//       justify-content: flex-start;
+//       margin: 0px;
+//     }
 
-    .searchBar {
-      width: 200px;
-      display: flex;
-      justify-content: center;
-      position: relative;
+//     .searchBar {
+//       width: 200px;
+//       display: flex;
+//       justify-content: center;
+//       position: relative;
                         
-      .searchText {
-        width: 215px; 
-        height: 24px;
-        text-align: center;
-        font-size: 12px;
-        color: $theme-color;
-        border: 1px solid $theme-color;
-        border-radius: 3px; 
-      }
+//       .searchText {
+//         width: 215px; 
+//         height: 24px;
+//         text-align: center;
+//         font-size: 12px;
+//         color: $theme-color;
+//         border: 1px solid $theme-color;
+//         border-radius: 3px; 
+//       }
 
-      .fa-search {
-        font-size: 11px;
-        color: $theme-color;
-        position: absolute;
-        margin-top: 7px;
-        margin-right: 70px;
-      }
-    }
+//       .fa-search {
+//         font-size: 11px;
+//         color: $theme-color;
+//         position: absolute;
+//         margin-top: 7px;
+//         margin-right: 70px;
+//       }
+//     }
 
-    .navIcon {
-        width: 198px;
-        height: 22px; 
-        display: flex;
-        flex-direction: row;
-        padding-left: 30px;
+//     .navIcon {
+//         width: 198px;
+//         height: 22px; 
+//         display: flex;
+//         flex-direction: row;
+//         padding-left: 30px;
           
-        img {
-          width: 22px;
-          height: 22px;
-          border-radius: 50px;
-          margin-top: 2px;
-        }
+//         img {
+//           width: 22px;
+//           height: 22px;
+//           border-radius: 50px;
+//           margin-top: 2px;
+//         }
 
-        a {text-decoration: none;}
+//         a {text-decoration: none;}
 
-        i {
-          font-size: 20px;  
-          padding-top: 3px;
-          white-space: nowrap;
-          margin-right: 20px;                     
-        }
-    }
-  }
-}
+//         i {
+//           font-size: 20px;  
+//           padding-top: 3px;
+//           white-space: nowrap;
+//           margin-right: 20px;                     
+//         }
+//     }
+//   }
+// }
 
-main {
-  margin: auto;
-  background-color: #FAFAFA;
-  position: relative;
-  z-index: 1;
+// main {
+//   margin: auto;
+//   background-color: #FAFAFA;
+//   position: relative;
+//   z-index: 1;
 
-  section {
-    width: 935px;
-    padding-top: 77px;
-    display: flex;
-    flex-flow: row nowrap;
+//   section {
+//     width: 935px;
+//     padding-top: 77px;
+//     display: flex;
+//     flex-flow: row nowrap;
 
-    .feedBox {
-      max-width: 560px;
-      width: 100%;
-      height: 1000px;
-      margin:0 0 0 40px;
-      display: flex;
-      flex-direction: column;
-      display:inline-block;
+//     .feedBox {
+//       max-width: 560px;
+//       width: 100%;
+//       height: 1000px;
+//       margin:0 0 0 40px;
+//       display: flex;
+//       flex-direction: column;
+//       display:inline-block;
 
-      .storyBox {
-        box-sizing: content-box;
-        width: 560px;
-        height: 84px;
-        padding: 16px 0px; 
-        background-color: #ffffff; 
-        border: 1px solid  $theme-color;
-        border-radius: 3px;
-        overflow-x: hidden;
-        overflow-y: hidden;
+//       .storyBox {
+//         box-sizing: content-box;
+//         width: 560px;
+//         height: 84px;
+//         padding: 16px 0px; 
+//         background-color: #ffffff; 
+//         border: 1px solid  $theme-color;
+//         border-radius: 3px;
+//         overflow-x: hidden;
+//         overflow-y: hidden;
 
-        .storyUl {
-          width: 20px;
-          height: 84px;
-          margin: 0;
-          padding: 0 10px;
-          display: flex;
-          justify-content: space-between;
+//         .storyUl {
+//           width: 20px;
+//           height: 84px;
+//           margin: 0;
+//           padding: 0 10px;
+//           display: flex;
+//           justify-content: space-between;
         
-          .storyList {
-            width: 80px;
-            height: 112px;
+//           .storyList {
+//             width: 80px;
+//             height: 112px;
           
-            .storyBig {
-              width: 80px;
-              height: 122;
-              display: flex;
-              justify-content: center;
-              position: relative;
+//             .storyBig {
+//               width: 80px;
+//               height: 122;
+//               display: flex;
+//               justify-content: center;
+//               position: relative;
             
-              button {
-                width: 64px;
-                height: 68px;
-                background-color: #ffffff;
-                border: none;
-                outline: none;               
+//               button {
+//                 width: 64px;
+//                 height: 68px;
+//                 background-color: #ffffff;
+//                 border: none;
+//                 outline: none;               
                               
-                .storySmall {
-                  width: 56px;
-                  height: 56px;
-                  align-items: center;
-                  justify-content: center;
-                  position: relative;
+//                 .storySmall {
+//                   width: 56px;
+//                   height: 56px;
+//                   align-items: center;
+//                   justify-content: center;
+//                   position: relative;
 
-                  .storyCanvas {
-                    width: 66px;
-                    height: 66px;
-                    position: absolute;
-                    top: -4px;
-                    left: -10px;   
-                  }
+//                   .storyCanvas {
+//                     width: 66px;
+//                     height: 66px;
+//                     position: absolute;
+//                     top: -4px;
+//                     left: -10px;   
+//                   }
 
-                  span {
-                    width: 56px;
-                    height: 56px;
-                    position: absolute;
-                    top: 2px;
-                    left: -4px;
+//                   span {
+//                     width: 56px;
+//                     height: 56px;
+//                     position: absolute;
+//                     top: 2px;
+//                     left: -4px;
 
-                    .storyImg {
-                      width: 56px;
-                      height: 56px; 
-                      border-radius: 70px;  
-                      border: 1px solid $theme-color;
-                    }
-                  }
-                }
+//                     .storyImg {
+//                       width: 56px;
+//                       height: 56px; 
+//                       border-radius: 70px;  
+//                       border: 1px solid $theme-color;
+//                     }
+//                   }
+//                 }
 
-                .storyUser {
-                  width: 62px;
-                  height: 14px;  
-                  font-size: 12px;
-                  color: rgb(83, 83, 83);
-                  position: absolute;
-                  top: 68px;
-                  left: 8px;
-                  overflow: hidden;
-                  white-space: nowrap;
-                  text-overflow: ellipsis;
-                }
-              }
-            }
-          }
-        }
-      }
+//                 .storyUser {
+//                   width: 62px;
+//                   height: 14px;  
+//                   font-size: 12px;
+//                   color: rgb(83, 83, 83);
+//                   position: absolute;
+//                   top: 68px;
+//                   left: 8px;
+//                   overflow: hidden;
+//                   white-space: nowrap;
+//                   text-overflow: ellipsis;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
 
-      .viewBox {
-        width: 560px;
-        height: 830px;
-        background-color: #ffffff;
-        border: 1px solid $theme-color;
-        border-radius: 3px;
-        display: flex;
-        flex-direction: column;
-        margin-top: 15px;
+//       .viewBox {
+//         width: 560px;
+//         height: 830px;
+//         background-color: #ffffff;
+//         border: 1px solid $theme-color;
+//         border-radius: 3px;
+//         display: flex;
+//         flex-direction: column;
+//         margin-top: 15px;
 
-        .writer {
-          width: 560px;
-          height: 60px;
+//         .writer {
+//           width: 560px;
+//           height: 60px;
 
-          .userInfo {
-            width: 550px;
-            height: 55px;
-            padding: 7px;
-            margin: 0px;
-            display: flex;
-            flex-direction: row;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+//           .userInfo {
+//             width: 550px;
+//             height: 55px;
+//             padding: 7px;
+//             margin: 0px;
+//             display: flex;
+//             flex-direction: row;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
 
-            .goMypage {
-              width: 42px;
-              height: 42px;
-              background-color: #ffffff;
-              border: none;
-              outline: none;
-              margin: 0px;
-              position: relative;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+//             .goMypage {
+//               width: 42px;
+//               height: 42px;
+//               background-color: #ffffff;
+//               border: none;
+//               outline: none;
+//               margin: 0px;
+//               position: relative;
+//               display: flex;
+//               justify-content: center;
+//               align-items: center;
 
-              .storySmall {
-                width: 42px;
-                height: 42px;
-                display: flex;   
+//               .storySmall {
+//                 width: 42px;
+//                 height: 42px;
+//                 display: flex;   
 
-                .smallCanvas {
-                  width: 42px;
-                  height: 42px;
-                  position: absolute;
-                  left: -9px;
-                }
+//                 .smallCanvas {
+//                   width: 42px;
+//                   height: 42px;
+//                   position: absolute;
+//                   left: -9px;
+//                 }
 
-                span{
-                  width: 32px;
-                  height: 32px;
-                }
+//                 span{
+//                   width: 32px;
+//                   height: 32px;
+//                 }
 
-                img {
-                  width: 32px;
-                  height: 32px;
-                  border-radius: 70px;
-                  position: absolute;
-                  left: 5px;
-                  top: 5px;    
-                }
-              }
-            }
+//                 img {
+//                   width: 32px;
+//                   height: 32px;
+//                   border-radius: 70px;
+//                   position: absolute;
+//                   left: 5px;
+//                   top: 5px;    
+//                 }
+//               }
+//             }
 
-            .userName {
-              width: 500px;
-              height: 36px;
-              position: relative;
+//             .userName {
+//               width: 500px;
+//               height: 36px;
+//               position: relative;
 
-              .linkName {
-                font-style: bold;
-                font-size: 13px;
-                width: 117px;
-                height: 15px;
-                position: absolute;
-                left: 12px;
-              }
+//               .linkName {
+//                 font-style: bold;
+//                 font-size: 13px;
+//                 width: 117px;
+//                 height: 15px;
+//                 position: absolute;
+//                 left: 12px;
+//               }
 
-              .linkMap {
-                font-size: 11px;
-                width: 100px;
-                height: 15px;
-                position: absolute;
-                left: 12px;
-                top: 20px;
-              }
-            }
-          }
-        }
+//               .linkMap {
+//                 font-size: 11px;
+//                 width: 100px;
+//                 height: 15px;
+//                 position: absolute;
+//                 left: 12px;
+//                 top: 20px;
+//               }
+//             }
+//           }
+//         }
         
-        .mainImg {
-          width: 560px;
-          height: 560px;
-          position: relative;
+//         .mainImg {
+//           width: 560px;
+//           height: 560px;
+//           position: relative;
         
-          .bigImg img {
-            width: 560px;
-            height: 560px;
-          }
+//           .bigImg img {
+//             width: 560px;
+//             height: 560px;
+//           }
 
-          .tagBtn {
-            width: 28px;
-            height: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            bottom: 8px;
-            left: 8px;
+//           .tagBtn {
+//             width: 28px;
+//             height: 28px;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             position: absolute;
+//             bottom: 8px;
+//             left: 8px;
 
-            .tagIcon {
-              width: 28px;
-              height: 28px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+//             .tagIcon {
+//               width: 28px;
+//               height: 28px;
+//               display: flex;
+//               justify-content: center;
+//               align-items: center;
             
-              .fa-user-circle {
-                font-size: 25px;
-              }
-            }
-          }
-        }
+//               .fa-user-circle {
+//                 font-size: 25px;
+//               }
+//             }
+//           }
+//         }
 
-        .talkBox {
-          width: 560px;
-          height: 203px;
-          margin-left: 2px;
-          padding: 0 10px;
-          display: flex;
-          flex-direction: column;
-          position: relative;
+//         .talkBox {
+//           width: 560px;
+//           height: 203px;
+//           margin-left: 2px;
+//           padding: 0 10px;
+//           display: flex;
+//           flex-direction: column;
+//           position: relative;
 
-          .talkIcon {
-            width: 520px;
-            height: 40px;
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
+//           .talkIcon {
+//             width: 520px;
+//             height: 40px;
+//             margin: 0;
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: flex-start;
+//             align-items: center;
 
-            span {
-              width: 40px;
-              height: 40px;
-              display: flex;
-              justify-content: flex-start;
-              margin: 0px;
-              align-items: center;
-              position: relative;
-            }
+//             span {
+//               width: 40px;
+//               height: 40px;
+//               display: flex;
+//               justify-content: flex-start;
+//               margin: 0px;
+//               align-items: center;
+//               position: relative;
+//             }
 
-            span.bookmarkIcon {
-              padding-left: 388px;
-            }
+//             span.bookmarkIcon {
+//               padding-left: 388px;
+//             }
 
-            button {
-              width: 24px;
-              height: 24px;
-              align-items: center;
-              margin: 0px;
-            }
+//             button {
+//               width: 24px;
+//               height: 24px;
+//               align-items: center;
+//               margin: 0px;
+//             }
 
-            i {
-              font-size: 22px;  
-              white-space: nowrap;
-              align-items: center;
-            }
-          }
+//             i {
+//               font-size: 22px;  
+//               white-space: nowrap;
+//               align-items: center;
+//             }
+//           }
 
-          .likeBox {
-            width: 520px;
-            height: 18px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            font-size: 13px;
-            font-style: bold;
-            margin-left: 8px;
-          }
+//           .likeBox {
+//             width: 520px;
+//             height: 18px;
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: flex-start;
+//             font-size: 13px;
+//             font-style: bold;
+//             margin-left: 8px;
+//           }
 
-          .likeBox a {margin: 0px;}
+//           .likeBox a {margin: 0px;}
 
-          .talkUsers {
-            width: 540px;
-            height: 66px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            font-size: 13px;
+//           .talkUsers {
+//             width: 540px;
+//             height: 66px;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: flex-start;
+//             font-size: 13px;
 
-            .mainTalker {
-              width: 540px;
-              height: 18px;
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              padding-left: 8px; 
+//             .mainTalker {
+//               width: 540px;
+//               height: 18px;
+//               display: flex;
+//               flex-direction: row;
+//               justify-content: flex-start;
+//               padding-left: 8px; 
 
-              .linkUser {
-                width: auto;
-                height: auto;
-                font-style: bold;
-                margin: 0px;
-              }
+//               .linkUser {
+//                 width: auto;
+//                 height: auto;
+//                 font-style: bold;
+//                 margin: 0px;
+//               }
 
-              .userWrite {
-                width: 135px;
-                height: 18px;
-                font-size: 12px;
-                margin: 0 0 0 5px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-              }
+//               .userWrite {
+//                 width: 135px;
+//                 height: 18px;
+//                 font-size: 12px;
+//                 margin: 0 0 0 5px;
+//                 overflow: hidden;
+//                 white-space: nowrap;
+//                 text-overflow: ellipsis;
+//               }
 
-              .moreText {
-                width: 32px;
-                height: 18px;
-                margin: 0 0 0 3px;
-                display: flex;
-                align-items: center;
-              }
-            }
+//               .moreText {
+//                 width: 32px;
+//                 height: 18px;
+//                 margin: 0 0 0 3px;
+//                 display: flex;
+//                 align-items: center;
+//               }
+//             }
 
-            .viewAllComment {
-              width: 540px;
-              height: 18px;
-              color: $theme-color;
-              padding: 0 0 0 9px;
+//             .viewAllComment {
+//               width: 540px;
+//               height: 18px;
+//               color: $theme-color;
+//               padding: 0 0 0 9px;
 
-              a {
-                width: 540px;
-                height: 18px;
-                color: rgb(142, 142, 142);
-              }
-            }
+//               a {
+//                 width: 540px;
+//                 height: 18px;
+//                 color: rgb(142, 142, 142);
+//               }
+//             }
             
-            .commenter {
-              width: 540px;
-              height: 18px;
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              padding-left: 8px; 
-              position: relative;
+//             .commenter {
+//               width: 540px;
+//               height: 18px;
+//               display: flex;
+//               flex-direction: row;
+//               justify-content: flex-start;
+//               padding-left: 8px; 
+//               position: relative;
 
-              .linkFriend {
-                width: auto;
-                height: auto;
-                margin: 0 5px 0 5px;
+//               .linkFriend {
+//                 width: auto;
+//                 height: auto;
+//                 margin: 0 5px 0 5px;
 
-                a {
-                  width: auto;
-                  height: auto;
-                  color: rgb(51, 94, 136);
-                }
-              }
+//                 a {
+//                   width: auto;
+//                   height: auto;
+//                   color: rgb(51, 94, 136);
+//                 }
+//               }
          
-              .heartIcon {
-                width: 20px;
-                height: 18px;
-                margin: 0px;
-                position: absolute;
-                right: 5px;
-              }
+//               .heartIcon {
+//                 width: 20px;
+//                 height: 18px;
+//                 margin: 0px;
+//                 position: absolute;
+//                 right: 5px;
+//               }
 
-              button {
-                width: 20px;
-                height: 18px;
-              }
-            }
-          }
-        }
+//               button {
+//                 width: 20px;
+//                 height: 18px;
+//               }
+//             }
+//           }
+//         }
 
-        .talkDateBox {
-          width: 540px;
-          height: 19px;
-          display: flex;
-          justify-content: flex-start;
-          font-size: 11px;
-          color: rgb(142, 142, 142);
-          margin: 0px;
+//         .talkDateBox {
+//           width: 540px;
+//           height: 19px;
+//           display: flex;
+//           justify-content: flex-start;
+//           font-size: 11px;
+//           color: rgb(142, 142, 142);
+//           margin: 0px;
 
-          p {margin: 12px 0 0 10px;}
-        }
+//           p {margin: 12px 0 0 10px;}
+//         }
 
-        .addComment {
-          width: 560px;
-          height: 40px;
-          border-top: 1px solid $theme-color;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: center;
-          margin: 20px 0 0 0 ;
-          position: absolute;
-          top: 145px;
-          left: -3px;
+//         .addComment {
+//           width: 560px;
+//           height: 40px;
+//           border-top: 1px solid $theme-color;
+//           display: flex;
+//           flex-direction: row;
+//           justify-content: flex-start;
+//           align-items: center;
+//           margin: 20px 0 0 0 ;
+//           position: absolute;
+//           top: 145px;
+//           left: -3px;
 
-          .smileIcon {
-            width: 40px;
-            height: 40px;
-            margin: 0px;
-            padding: 10px;
+//           .smileIcon {
+//             width: 40px;
+//             height: 40px;
+//             margin: 0px;
+//             padding: 10px;
             
-            button {
-              width: 24px;
-              height: 24px;
-              padding: 0px;
+//             button {
+//               width: 24px;
+//               height: 24px;
+//               padding: 0px;
 
-              i {font-size: 20px;}
-            }
-          }
-          .addTextBox {
-            width: 450px;
-            height: 18px;
-            display: flex;
-            align-items: center;
+//               i {font-size: 20px;}
+//             }
+//           }
+//           .addTextBox {
+//             width: 450px;
+//             height: 18px;
+//             display: flex;
+//             align-items: center;
 
-            input{
-              width: 450px;
-              height: 18px;
-              border: none;
-              outline: none;
-              color: rgb(142, 142, 142);
-            }
-          }
+//             input{
+//               width: 450px;
+//               height: 18px;
+//               border: none;
+//               outline: none;
+//               color: rgb(142, 142, 142);
+//             }
+//           }
           
-          .addTextBtn button {
-            color:rgb(179, 223, 252)
-          }
-        }
-      }
-    }
-  }
-}    
+//           .addTextBtn button {
+//             color:rgb(179, 223, 252)
+//           }
+//         }
+//       }
+//     }
+//   }
+// }    
