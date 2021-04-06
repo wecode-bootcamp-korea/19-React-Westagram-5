@@ -1,0 +1,35 @@
+.headName {
+  width: 600px;
+  height: 60px;
+
+  border: 1px solid lightgray;
+  margin-top: 30px;
+
+  .profilePhoto {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+
+    .profilePhoto1 {
+      padding-left: 10px;
+
+      .uniform1 {
+        height: 42px;
+        width: 42px;
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+    }
+    .name {
+      margin-top: 20px;
+      padding-left: 18px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .dot {
+      padding-left: 450px;
+      font-size: 18px;
+      margin-top: 19px;
+    }
+  }
+}

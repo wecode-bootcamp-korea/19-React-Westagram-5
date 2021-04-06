@@ -1,15 +1,19 @@
 .downLoad{
-  width: 381px;
+  width: 360px;
   height: 18px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom:20px;
   flex-direction: column;
   display: flex;
   align-items: center;
   font-size: 15px;
+  
 
   .appleApp{
     justify-content: space-around;
+    display: flex;
+    width: 280px;
+    margin-top: 20px;
     
     .Rt8TI{
       width: 136px;

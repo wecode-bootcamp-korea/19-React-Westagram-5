@@ -1,0 +1,40 @@
+nav{
+  width: 100%;
+  height: 150px;
+
+  .followers{
+    width:600px;
+    height:118px;
+    margin-top: 20px;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .people {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 12px;
+
+      img{
+        width: 56px;
+        height: 56px;
+        margin-left: 10px;
+
+        border-radius: 50%;
+        justify-content: space-around;
+
+        .easter{
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+
+
+

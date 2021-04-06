@@ -1,0 +1,88 @@
+.mainPhotoComment {
+  width: 599px;
+  height: 220px;
+
+  margin-top: -5px;
+  border: 1px solid lightgray;
+
+  .mainPhotoIcon {
+    font-size: 24px;
+    padding-left: 10px;
+    margin-top: 8px;
+    justify-content: space-between;
+    width: auto;
+    display: flex;
+
+    .fa-bookmark {
+      margin-left: 450px;
+      padding-right: 20px;
+    }
+  }
+  .likeComment {
+    width: 568px;
+    height: 165px;
+
+    .like {
+      width: 584px;
+      height: 18px;
+      padding-left: 16px;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    .likeName {
+      margin-top: 8px;
+      padding-left: 16px;
+      width: 584px;
+      height: 80px;
+    }
+    .likeName1 {
+      font-weight: bold;
+    }
+
+    .Comments {
+      margin-top: 8px;
+    }
+
+    .date {
+      color: lightgray;
+      font-size: 8px;
+
+      margin-top: 10px;
+    }
+
+    .heart {
+      margin-left: 377px;
+    }
+
+    .emoticon {
+      width: 584px;
+      height: 48px;
+      border-top: 1px solid lightgray;
+      font-size: 24px;
+      margin-top: 4px;
+      position: relative;
+      top: 30px;
+      right: 15px;
+      padding-left: 16px;
+    }
+
+    .fa-smile {
+      padding-top: 10px;
+    }
+
+    .upload {
+      font-size: 15px;
+      text-align: right;
+      margin-left: 110px;
+    }
+
+    .emoticon input {
+      outline: none;
+      box-shadow: none;
+      background-color: #ffff;
+      border: none;
+      width: 400px;
+      height: 14px;
+    }
+  }
+}
