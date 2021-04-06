@@ -11,33 +11,6 @@ import {
 import "./MainPhotoComment.scss";
 
 class MainPhotoComment extends Component {
-
-  constructor(){
-    super();
-
-    this.state = {
-      commment: '',
-      commentLists:[]
-    }
-
-  }
-
-  handleInput = e =>{
-    this.setState({
-      commment : e.target.value
-    })
-  }
-
-  addInput = () => {
-    let commentArray = this.state.commentLists;
-    commentArray.push(this.state.comment);
-
-    this.setState({
-      commentLists:commentArray,
-      comment: ''
-    })
-  }
-
   render() {
     return (
       <>
@@ -72,14 +45,19 @@ class MainPhotoComment extends Component {
               <div className="date">
                 <div className="dateDay">1일 전</div>
               </div>
+
               <div className="emoticon">
                 <FontAwesomeIcon icon={faSmile} className="faSmile" />
-                <input
-                  className="commentBox" type="text"placeholeder="댓글 달기..." onChange={this.handleInput} value={this.state.comment}/>
-                <button className="upload" onClick={this.addInput}>게시</button>
-              </div>
-            </div>
+              
+            <input
+              className="commentBox"
+              type="text"
+              placeholeder="댓글 달기..."
+            />
+            <button className="upload">게시</button>
           </div>
+        </div>
+        </div>
         </div>
       </>
     );
