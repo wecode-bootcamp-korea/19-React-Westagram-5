@@ -53,7 +53,7 @@ class MainPhotoComment extends Component {
                   type="text"
                   placeholeder="댓글 달기..."
                 />
-                <span className="upload">게시</span>
+                <button className="upload">게시</button>
               </div>
             </div>
           </div>
