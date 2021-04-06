@@ -5,15 +5,53 @@ class Feeds extends Component {
     constructor(props){
         super(props);
         this.state = {
-            buttonDisable : true,
-            buttonOptin:[
-                { color:'blue', cursor:'pointer'},
-                { color:'skyblue', cursor:'auto'}
-            ]
+            myId : 'kdh24',
+            comment: '',
+            commentArr:[
+                {id:1, userId:'_apink_pinkpanda', content:'Apink🐼💖❤️💙💜 #APINK #에이핑크 #CHORONG #박초롱 #BOMI #윤보미 #EUNJI #정은지 #NAEUN #손나은 #NAMJOO #김남주 #HAYOUNG #오하영'},
+                {id:2, userId:'i_want.apink', content:'YAAAAAAAAAAAA QUE RAINHAS ❤️🙌 MEU DEUS QUE LINDAAAS ELAS E TÃO MARAVILHOSAS 😔❤ MAIS EU NÃO AGUENTO VER ISSO PQ EU VOU DESMAIAR KSKSKS'}
+            ],
+            buttonDisable : true
         }
     }
 
+    commentChange = (e) => {
+        this.setState({
+            comment : e.target.value
+        });
+        
+        console.log(e.target.value.length)
+        if(e.target.value.length > 0){
+            this.setState({
+                buttonDisable : false
+            });
+        }
+        console.log(this.state.buttonDisable)
+    }
+
+    commentUp = (e) => {
+        
+        if(this.state.comment.length < 0){
+            return;
+        }else{
+            let commentArr = this.state.commentArr;
+            commentArr.push({id: (this.state.commentArr.length+1), userId: this.state.myId, content: this.state.comment})
+
+            this.setState({
+                commentArr:commentArr
+            })
+
+            this.setState({
+                comment:'',
+                buttonDisable:true
+            })
+
+        }
+        // e.target.value;
+    }
+
     textareaKeyDown = (e) => {
+        console.log(e.keyCode)
         if(e.keyCode === 13){
             e.preventDefault();
         }
@@ -60,10 +98,12 @@ class Feeds extends Component {
     } */
     render() {
         let commentList = [];
-        let commentArr = this.props.commentArr;
+        let commentArr = this.state.commentArr;
+
         let i = 0;
+        // console.log(commentArr.length)
         while(i < commentArr.length){
-            commentList.push(<li key={commentArr[i].id}><p><a>{commentArr[i].userId}</a>{commentArr[i].content}</p></li>);
+            commentList.push(<li key={commentArr[i].id}><p><a>{commentArr[i].userId} </a>{commentArr[i].content}</p></li>);
             i = i + 1;
         }
 
@@ -141,12 +181,16 @@ class Feeds extends Component {
                                     <i class="far fa-smile fa-5x"></i>
                                 </button>
                                 <textarea type="text" placeholder="댓글 달기..." 
+                                onChange={this.commentChange}
                                 onKeyDown={this.textareaKeyDown}
                                 onKeyUp={this.textareaKeyUp}
+                                value={this.state.comment}
                                 ></textarea>
-                                <button id="commentUpload" type="button" disabled
+                                <button 
+                                className={'commentUpButton ' + (this.state.buttonDisable ? 'commentUploadFalse' : 'commentUpload') } 
+                                type="button" disabled={this.state.buttonDisable}
                                 onClick={this.commentUp}
-                                disabled={this.state.disValue}
+                                // disabled={this.state.disValue}
                                 >
                                     게시
                                 </button>
@@ -162,5 +206,4 @@ class Feeds extends Component {
         )
     }
 }
-
 export default Feeds 
