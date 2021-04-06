@@ -5,9 +5,10 @@ class Feeds extends Component {
     constructor(props){
         super(props);
         this.state = {
+            buttonDisable : true,
             buttonOptin:[
-                {disValue:true, color:'blue', cursor:'pointer'},
-                {disValue:false, color:'skyblue', cursor:'auto'}
+                { color:'blue', cursor:'pointer'},
+                { color:'skyblue', cursor:'auto'}
             ]
         }
     }
