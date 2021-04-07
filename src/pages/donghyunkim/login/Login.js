@@ -9,6 +9,7 @@ class Login extends Component {
         super(props);
         this.state = {
             disValue:true,
+            loginButtonClassName:'loginOff',
             inputId:'',
             inputPass:''
         }
@@ -21,8 +22,8 @@ class Login extends Component {
         this.props.history.push('/maindh');
         console.log(this.props.history);
     }
-    
-    inputPasswdKeydown = (e) => {
+    /*
+    inputPasswdKeydown =  (e) => {
         
         const loginButton = document.getElementById('login-button');
         let passwdInput = document.getElementById('passwd-input');
@@ -47,18 +48,43 @@ class Login extends Component {
                 disValue:true
             });
         }
-    }
+    } */
 
     handleInputId = (e) => {
         this.setState({
             inputId : e.target.value
         });
+        
+        if(e.target.value.indexOf('@') > -1 && this.state.inputPass.length > 4) {
+            this.setState({
+                disValue:false
+            });
+        }else{
+            this.setState({
+                disValue:true
+            });
+        }
     }
 
     handleInputPass = (e) => {
         this.setState({
             inputPass : e.target.value
         });
+
+        console.log('------');
+        console.log(this.state.inputId);
+        console.log(this.state.inputPass);
+        console.log(this.state.inputId.indexOf('@'));
+        console.log(e.target.value);
+        if(this.state.inputId.indexOf('@') > -1 && e.target.value.length > 4) {
+            this.setState({
+                disValue:false
+            });
+        }else{
+            this.setState({
+                disValue:true
+            });
+        }
     }
 
     render() {
@@ -74,7 +100,7 @@ class Login extends Component {
                     onChange={this.handleInputPass}
                     onKeyDown={this.inputPasswdKeydown}
                     />
-                    <button className="sectionInput-width" id="login-button" 
+                    <button className={'sectionInput-width loginButton ' + (this.state.disValue ? 'loginOff' : 'loginOn') } 
                     onClick={this.goToMain}
                     disabled={this.state.disValue}
                     >로그인</button>
