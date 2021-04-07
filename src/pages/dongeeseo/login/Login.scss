@@ -1,186 +1,202 @@
 
-* { 
+.login {
+   width: 330px;
+   margin: 50px auto;
    box-sizing: border-box;
    font-family: 'Roboto', sans-serif;
-   margin-left: auto;
-   margin-right: auto;
 
-   input:focus {
-      outline: none;
-      box-shadow: 0 0 0 1px gray;
-   }
-
-   a {
-      color: white;
-      text-decoration: none;
-   }
-
-   button:focus{outline: none;}
-}
-
-main {
-   width: 335px;
-   height: 380px;
-   border: 1px solid #dbdbdb;
-   background-color: #ffffff;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   
-      .header {
-         width: 300px;
-         height: 136px;
-         display: flex;
-         align-items: center;
-         
-         h1 {
-            font-size: 40px;
-            font-family: 'Lobster', cursive;   
-            margin: auto;
-            text-align: center;
-         }
-      }
-
-      form {
-         width: 330px;
-         height: 128px;
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-
-         .Id {
-         width: 258px;
-         height: 36px; 
-         font-size: 11px;
-         color: #8e8e8e;
-         padding: 8px;
-         background-color: #fafafa;
-         border: 1px solid rgb(219, 219, 219);
-         border-radius: 3px;
-         margin: 3px auto;
-         }
-         .Pw{
-            @extend .Id;
-         }
-
-         .logInButton{
-            font-size: 13px;
-            font-style: bold;
-            color: #ffffff;
-            background-color: rgb(178, 223, 252);
-            width: 258px;
-            height: 28px;
-            border: none;
-            border-radius: 3px;
-            margin: 8px auto;
-         }
-      }
-
-      .orLine {
-         width: 268px;
-         display: flex;
-         flex-wrap: nowrap; 
-         justify-content: space-around;
-         margin: 8px auto;
-
-         .sideLine {
-            width: 105px;
-            height: 9px;
-            border-bottom: 1px solid #dbdbdb;
-         }
-
-         .orLetter{
-            font-size: 13px;
-            color: #8e8e8e;
-         }
-      }
-   }
-
-         nav{
+   .inputUser {
+      width: 320px;
+      height: 380px;
+      border: 1px solid #dbdbdb;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+         .header {
             width: 330px;
-            height: 57px;
-            margin: 12px 0px;
+            height: 130px;
             display: flex;
-            flex-flow: column wrap;
-            justify-content: center;               
+            justify-content: center;
+            align-items: center;
+            
+            h1 {
+               font-size: 40px;
+               font-family: 'Lobster', cursive;   
+               margin: 0;
+               text-align: center;
+            }
+         }
 
-            .facebook {
-               width: 268px;
-               height: 30;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               
+         .inputUserInfo {
+            width: 330px;
+            height: 128px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .Id {
+            width: 240px;
+            height: 25px; 
+            font-size: 11px;
+            color: #8e8e8e;
+            padding: 8px;
+            background-color: #fafafa;
+            border: 1px solid rgb(219, 219, 219);
+            border-radius: 3px;
+            margin: 3px auto;
+            outline: none;
+            box-shadow: 0 0 0 1px  #fafafa;
             }
-            i.fa-facebook-square {
-               margin: 0px 5px 0px 0px;
-               width: 16px;
-               height: 16px;
-               color: #385185;
+            .Pw{
+               @extend .Id;
             }
-            span {
-               margin-bottom: 3px;
+
+            .logInButton{
+               width: 258px;
+               height: 35px;
                font-size: 13px;
-               color: #385185;
-               vertical-align: baseline;
+               font-style: bold;
+               color: #ffffff;
+               background-color: rgb(178, 223, 252);
+               border: none;
+               border-radius: 3px;
+               margin: 8px auto;
+               outline: none;
+               border: none;
+             
+            }
+         }
+
+         .orLine {
+            width: 268px;
+            display: flex;
+            flex-wrap: nowrap; 
+            justify-content: space-around;
+            margin: 8px auto;
+
+            .sideLine {
+               width: 105px;
+               height: 6px;
+               border-bottom: 1px solid #dbdbdb;
             }
 
-            .forgotPw {
-               width: 268px;
-               height: 30px;
+            .orLetter{
+               font-size: 13px;
+               color: #8e8e8e;
 
-               a{
-               width: 268px;
-               height: 30px;
-               display: flex;
-               justify-content: center;
-               font-size: 10px;
-               color: #00376b;
-               margin-top: 15px;
+               a {
+               text-decoration: none;
+               color: #8e8e8e;
                }
             }
-}
-  
-.signUp {
-   width: 330px;
-   height: 48px;
-   font-size: 13px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border: 1px solid  #dbdbdb;
-   margin-top: 10px; 
-
-   a{
-      color: #0095f6;
-   }
-}
-
-form {
-   .getAppLetter {
-      width: 330px;
-      display: flex;
-      justify-content: center;
-      font-size: 14px;
-      padding: 20px;
-   }
-
-   .getAppStore {
-      width: 330px;
-      display: flex;
-      justify-content: center;
-
-      .play {
-         width: 136px;
-         height: 40px;
-         padding: 0px;
-         margin-left: -20px;
+         }
       }
-      .apple {
-         width: 136px;
-         height: 40px;
-         padding: 0px;
-         margin-right: -20px;
-      }   
+
+      nav{
+         width: 330px;
+         height: 57px;
+         margin: 12px 0px;
+         display: flex;
+         flex-flow: column wrap;
+         justify-content: center;               
+
+         .facebook {
+            width: 330px;
+            height: 30;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         .facebookSquare {
+            margin: 0px 5px 0px 0px;
+            width: 16px;
+            height: 16px;
+            color: #025caf;
+         }
+         .loginFaceBook {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #025caf;
+            vertical-align: baseline;
+         }
+
+         .forgotPw {
+            width: 330px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+
+            a{
+            width: 268px;
+            height: 15px;
+            display: flex;
+            justify-content: center;
+            font-size: 10px;
+            color: #025caf;
+            text-decoration: none;
+            }
+         }
+   }
+   
+   .signUpTo {
+      width: 323px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid  #dbdbdb;
+      margin: 10px 0; 
+      
+      .DonHave {
+         width: auto;
+         font-size: 13px;
+         margin-right: 5px;
+      }
+
+      .sign {
+         @extend .DonHave;
+         color: #025caf;
+
+      }
+   }
+
+   .getAppBox {
+      width: 330px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .getAppLetter {
+         width: 330px;
+         display: flex;
+         justify-content: center;
+
+         .getA {
+         font-size: 14px;
+         color:rgb(38, 38, 38);
+         text-decoration: none;
+         }
+      }
+
+      .getAppStore {
+         width: 300px;
+         display: flex;
+         justify-content: space-around;
+         margin-top: 20px;
+         .play {
+            width: 136px;
+            height: 40px;
+            padding: 0px;
+         }
+         .apple {
+            @extend .play
+         }   
+      }
    }
 }

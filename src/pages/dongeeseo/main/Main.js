@@ -11,277 +11,185 @@ import deco from 'images/donz/deco.jpg'
 import surfing from 'images/donz/surfing.jpg'
 import jeju from 'images/donz/jeju.jpg'
 import madeleine from 'images/donz/madeleine.jpg'
+import hoian from 'images/donz/hoian.jpg'
+
+
+
 
 class Main extends Component {
   render() {
     return(
-      <>
-        <header>
-            <nav>
+    <div className = "whole">
+        <header className = "mainHeader">
+            <nav className = "mainNav">
                 <div className = "mainLogo"> Westagram </div>           
                 <div className = "searchBar">
-                    <FontAwesomeIcon icon={faSearch} className="search" />
-                    <input className = "searchText" type = "text" placeholder = "Search"/>    
+                    <FontAwesomeIcon icon= {faSearch} className = "search" />
+                    <input className = "searchText" type = "text" placeholder = "Search" />    
                 </div>
                 <div className = "navIcon">
-                    <a href = "https://reactjs.org"><FontAwesomeIcon icon={faHome} className="home" /></a>
-                    <a href = "https://reactjs.org"><FontAwesomeIcon icon={faPaperPlane} className="paperPlane" /></a>
-                    <a href = "https://reactjs.org"><FontAwesomeIcon icon={faCompass} className="compass" /></a>
-                    <a href = "https://reactjs.org"><FontAwesomeIcon icon={faHeart} className="heart" /></a>
-                    <a href = "https://reactjs.org"><img className = "myPhoto" src = {olaf} alt = "no img" /></a>
+                    <a href = "#"><FontAwesomeIcon icon = {faHome} className= "home" /></a>
+                    <a href = "#"><FontAwesomeIcon icon = {faPaperPlane} className = "airplane" /></a>
+                    <a href = "#"><FontAwesomeIcon icon = {faCompass} className = "compass" /></a>
+                    <a href = "#"><FontAwesomeIcon icon = {faHeart} className = "heart" /></a>
+                    <a href = "#"><img className = "myPhoto" src = {olaf} alt= "no img" /></a>
                 </div>
             </nav>
         </header>    
-        <main>
+        <main className = "mainMain">
             <section className = "feed">
-                <div className = "feedBox">
-                    <div className = "storyBox">
-                        <ul className = "storyUl">
-                            <li className = "storyList">
-                              <div className = "storyBig">
+                <article className = "viewStory">
+                    <ul className = "storyUl">
+                        <li className = "storyList">
+                            <div className = "storyItem">
                                 <button className = "storyBtn">
-                                    <div className = "storySmall">
-                                      <canvas className = "storyCanvas"></canvas>
-                                        <span className ="storyBoxCircle">
-                                          <img  alt = "no img" className = "storyImg" src = {require('images/donz/hoian.jpg')} />
-                                        </span>
+                                    <div className = "storyPhoto">
+                                        <img  alt = "no img" className = "storyImg" src = {hoian} />
                                     </div>
                                     <div className = "storyUser">Hoi!an</div>  
                                 </button>
-                              </div>
-                            </li>
-                            <li className = "storyList">
-                              <div className = "storyBig">
+                            </div>
+                        </li>
+                        <li className = "storyList">
+                            <div className = "storyItem">
                                 <button className = "storyBtn">
-                                    <div className = "storySmall">
-                                      <canvas className = "storyCanvas"></canvas>
-                                      <span className ="storyBoxCircle">
-                                        <img alt = "no img" className = "storyImg" src = {bicycle}/> 
-                                      </span>
+                                    <div className = "storyPhoto">
+                                        <img alt = "no img" className = "storyImg" src = {bicycle} /> 
                                     </div>
                                     <div className = "storyUser">rider_209</div>  
                                 </button>
-                              </div>
-                            </li>
-                            <li className = "storyList">
-                              <div className = "storyBig">
-                                <button className = "storyBtn">
-                                    <div className = "storySmall">
-                                      <canvas className = "storyCanvas"></canvas>
-                                      <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = {cafe} />
-                                      </span>
-                                    </div>
-                                    <div className = "storyUser">coffeeNcake</div>  
-                                </button>
-                              </div>
-                            </li>
-                            <li className = "storyList">
-                              <div className = "storyBig">
-                                <button className = "storyBtn">
-                                    <div className = "storySmall">
-                                      <canvas className = "storyCanvas"> </canvas>
-                                      <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = {cat} /> 
-                                      </span>
-                                    </div>
-                                    <div className = "storyUser">imasupercute</div>  
-                                </button>
-                              </div>
-                            </li>
-                            <li className = "storyList">
-                              <div className = "storyBig">
-                                <button className = "storyBtn">
-                                    <div className = "storySmall">
-                                      <canvas className = "storyCanvas"></canvas>
-                                      <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = {deco} /> 
-                                      </span>
-                                    </div>
-                                    <div className = "storyUser">cafe_Palbang</div>  
-                                </button>
-                              </div>
-                            </li>
-                            <li className = "storyList">
-                              <div className = "storyBig">
-                                <button className = "storyBtn">
-                                    <div className = "storySmall">
-                                      <canvas className = "storyCanvas"></canvas>
-                                      <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = {olaf} /> 
-                                      </span>
-                                    </div>
-                                    <div className = "storyUser">doUwanna</div>  
-                                </button>
-                              </div>
-                            </li>
-                            <li className = "storyList">
-                                <div className = "storyBig">
-                                  <button className = "storyBtn">
-                                      <div className = "storySmall">
-                                        <canvas className = "storyCanvas">  
-                                        </canvas>
-                                      <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = {surfing} /> 
-                                      </span>
-                                    </div>
-                                    <div className = "storyUser">hamsik_surf</div>  
-                                  </button>
-                                </div>
-                              </li>
-                              <li className = "storyList">
-                                <div className = "storyBig">
-                                  <button className = "storyBtn">
-                                      <div className = "storySmall">
-                                        <canvas className = "bigCanvas">  
-                                        </canvas>
-                                      <span className ="storyBoxCircle">
-                                          <img alt = "no img" className = "storyImg" src = {jeju} /> 
-                                      </span>
-                                    </div>
-                                    <div className = "storyUser">donZ_209</div>  
-                                  </button>
-                                </div>
-                              </li>
-                        </ul>
-                    </div>
-                    <div className = "viewBox">
-                      <div className = "writer"> 
-                        <div className = "userInfo">
-                          <button className = "goMypage">
-                            <div className = "storySmall">
-                                <canvas className = "smallCanvas">
-                                </canvas>
-                                <span className = "smallImg">
-                                    <img className = "smallImg" src = {olaf} alt = "no img" />
-                                </span>
                             </div>
-                          </button>
-                          <div className = "userName">
-                              <div className = "linkName">
-                                <span>
-                                  <a href = "https://www.instagram.com/dongee_209/" alt = "does not exist">dongee_209</a>
-                                </span>
-                              </div>
-                              <div className = "linkMap">
-                                  <a href = "https://reactjs.org">동이네집</a>
-                              </div>
-                          </div>
-                          <div className = "moreInfo">
-                           <FontAwesomeIcon icon={faEllipsisH} className="ellipsis" />
-                          </div>  
-                        </div> 
-                      </div>                        
-                      <div className = "mainImg">
-                        <div className = "bigImg">
-                            <img src = {madeleine} alt= "no img" />
-                        </div>                            
-                        <button className = "tagBtn">
-                            <div className = "tagIcon">
-                              <FontAwesomeIcon icon={faUserCircle} className="circle" />
+                        </li>
+                        <li className = "storyList">
+                            <div className = "storyItem">
+                                <button className = "storyBtn">
+                                    <div className = "storyPhoto">
+                                        <img alt = "no img" className = "storyImg" src = {cafe} />
+                                    </div>
+                                    <div className = "storyUser">coffee&cake</div>  
+                                </button>
                             </div>
+                        </li>
+                        <li className = "storyList">
+                        <div className = "storyItem">
+                            <button className = "storyBtn">
+                                <div className = "storyPhoto">
+                                    <img alt = "no img" className = "storyImg" src = {cat} /> 
+                                </div>
+                                <div className = "storyUser">imasupercute</div>  
+                            </button>
+                        </div>
+                        </li>
+                        <li className = "storyList">
+                        <div className = "storyItem">
+                            <button className = "storyBtn">
+                                <div className = "storyPhoto">
+                                    <img alt = "no img" className = "storyImg" src = {deco} /> 
+                                </div>
+                                <div className = "storyUser">cafe_Palbang</div>  
+                            </button>
+                        </div>
+                        </li>
+                        <li className = "storyList">
+                        <div className = "storyItem">
+                            <button className = "storyBtn">
+                                <div className = "storyPhoto">
+                                    <img alt = "no img" className = "storyImg" src = {olaf} /> 
+                                </div>
+                                <div className = "storyUser">doUwanaa</div>  
+                            </button>
+                        </div>
+                        </li>
+                        <li className = "storyList">
+                            <div className = "storyItem">
+                            <button className = "storyBtn">
+                                <div className = "storyPhoto">
+                                    <img alt = "no img" className = "storyImg" src = {surfing} /> 
+                                </div>
+                                <div className = "storyUser">hamsik_surf</div>  
+                            </button>
+                            </div>
+                        </li>
+                        <li className = "storyList">
+                        <div className = "storyItem">
+                        <button className = "storyBtn">
+                            <div className = "storyPhoto">
+                                <img alt = "no img" className = "storyImg" src = {jeju} /> 
+                            </div>
+                            <div className = "storyUser">donZ_209</div>  
                         </button>
-                      </div>                     
-                      <div className = "talkBox">
-                          <div className = "talkIcon">
-                            <span className = "heartIcon">
-                              <button className = "heartIcon_">
-                                <FontAwesomeIcon icon={faHeart} className="heart" />
-                              </button>
-                            </span>
-                            <span className = "allCommentIcon">
-                              <button className = "allCommentIcon_">
-                                <FontAwesomeIcon icon={faComment} className="commentIcon" />                              </button>
-                            </span>
-                            <span className = "dmIcon">
-                              <button className = "dmIcon_">
-                                <FontAwesomeIcon icon={faPaperPlane} className="paperPlane" />                              </button>
-                            </span>
-                            <span className = "bookmarkIcon">
-                              <button className = "bookmarkIcon_">
-                                <FontAwesomeIcon icon={faBookmark} className="bookmark" />                              </button>
-                            </span>
-                          </div>
-                          <div className = "likeBox">
-                              <a href ="https://reactjs.org">
-                                <span> 42</span>
-                                likes
-                              </a>
-                          </div>
-                          <div className = "talkUsers">
-                            <div className = "mainTalker">
-                                <span className = "linkUser">
-                                  <a href = "https://www.instagram.com/dongee_209/" alt = "does not exist">dongee_209</a>
-                                </span>
-                                <span className = "userWrite">
-                                할로윈 기념 가오나시 마들렌. 내일 양이랑 뚜떵이한테 나눠줘야지. 졸귀탱이네
-                                </span>
-                                <span className = "moreText">
-                                  <a href = "https://reactjs.org" alt = "does not exist">more</a>
-                                </span>
-                            </div>
-                            <div className = "comment">
-                                <div className = "viewAllComment">
-                                  <a href= "https://reactjs.org">View all 2 comments </a>
-                                </div>
-                                <div className = "commenter">
-                                  <span className = "linkUser">
-                                    <a href = "https://www.instagram.com/dongee_209/" alt = "does not exist">sheep_citizen</a>
-                                  </span>
-                                  <span className = "linkFriend">
-                                    <a href = "https://www.instagram.com/dongee_209/" alt = "does not exist">@dongee_209</a>
-                                  </span>
-                                  <span className = "userWrite">
-                                  맛은...?
-                                  </span>
-                                  <span className = "heartIcon">
-                                    <button className = "heartIcon_">
-                                      <FontAwesomeIcon icon={faHeart} className="heart" />                                    </button>
-                                  </span>
-                                </div>
-                                <div className = "commenter">
-                                  <span className = "linkUser">
-                                    <a href = "https://www.instagram.com/dongee_209/" alt = "does not exist">crystal_in</a>
-                                  </span>
-                                  <span className = "linkFriend">
-                                    <a href = "https://www.instagram.com/dongee_209/" alt = "does not exist"> mun_sh</a>
-                                  </span>
-                                  <span className = "userWrite">
-                                  떵희 나와라!
-                                  </span>
-                                  <span className = "heartIcon">
-                                    <button className = "heartIcon_">
-                                      <FontAwesomeIcon icon={faHeart} className="heart" />
-                                    </button>
-                                  </span>
-                                </div>
-                            </div>
-                          </div>                
-                          <div className = "talkDateBox">
-                            <p>
-                              <time datetime = "1D"> 1 days </time>
-                              ago
-                              </p>
-                          </div>
-                          <div className = "addComment">
-                            <span className = "smileIcon">
-                              <button className = "smileIcon_">
-                                <FontAwesomeIcon icon={faSmile} className="smile" />
-                              </button>
-                            </span>
-                            <div className = "addTextBox">
-                                <input placeholder = "Add a comment..." />
-                            </div>
-                            <div className = "addTextBtn">
-                              <button>Post</button>             
-                            </div>
-                          </div>
-                      </div> 
+                        </div>
+                    </li>
+                     </ul>
+                </article>
+                <article className = "viewUpload">
+                    <div className = "uploadUser">
+                        <div className = "uploaderFace">
+                            <img src = {olaf} alt = "no img" />
+                        </div>
+                        <div className = "uploaderInfo">
+                            <div className = "userName">dongee_029</div>
+                            <div className = "userPlace">동이네 집</div>
+                        </div>
+                        <div className = "moreInfo">
+                            <FontAwesomeIcon icon = {faEllipsisH} className = "threeDots" />
+                        </div>
                     </div>
-              </div>                
-            </section>   
-        </main>
-      </>  
+                    <div className = "uploadImg">
+                        <img src = {madeleine} className= "mainImg" alt= "no img"/>
+                    </div>
+                    <div className = "viewComment">
+                        <div className = "feedbackIcon">
+                            <span className = "emptyHeart"><FontAwesomeIcon icon = {faHeart} className = "heart" /></span>
+                            <span className = "balloon"><FontAwesomeIcon icon = {faComment} className = "balloonIcon" /></span>
+                            <span className = "airPlane"> <FontAwesomeIcon icon = {faPaperPlane} className = "airplane" /></span>
+                            <span className = "bookMark"><FontAwesomeIcon icon = {faBookmark} className ="bookmark" /></span>
+                        </div>
+                        <div className = "likeCount">
+                            <span className = "likeNum">52</span>
+                            <span className = "likeWord">likes</span>
+                        </div>
+                        <div className = "uploaderWriting">
+                            <div className = "userName">dongee_029</div>
+                            <div className = "userSentence">녹차마들렌,,가오나시 졸귀ㅎㅎ 할로윈기념!</div>
+                            <div className = "showMoreWriting">
+                                <button className = "showMore" type = "button">More</button>
+                            </div>
+                        </div>
+                        <div className = "comments">
+                            <ul className = "replies">
+                                <div className = "viewAll">View all comments
+                                </div>
+                                <li className = "reply">
+                                    <div className = "userName">sheep&bird</div>
+                                    <div className = "userSentence">맛은..?</div>
+                                    <div className = "likeHeart">
+                                        <FontAwesomeIcon icon = {faHeart} className = "heart" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className = "updateDate">
+                        <span className = "number">1</span>
+                        <span className = "countDetail">days</span>
+                        <span>ago</span>
+                    </div>
+                    <form className = "addComment">
+                        <div className= "smileIcon">
+                            <FontAwesomeIcon icon = {faSmile} className = "smile" />
+                        </div>
+                        <div className = "inputComment">
+                            <input className = "addReply" type = "text" placeholder="Add a comment"/>
+                        </div>
+                        <div className = "post">
+                            <button className= "postBtn" type = "button">Post</button>   
+                        </div>
+                    </form>
+                </article>
+            </section>
+        </main>     
+    </div>
     )
   }
 }
