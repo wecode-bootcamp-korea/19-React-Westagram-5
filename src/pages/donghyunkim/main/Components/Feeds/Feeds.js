@@ -7,6 +7,7 @@ class Feeds extends Component {
         this.state = {
             myId : 'kdh24',
             comment: '',
+            textKeyValue: '',
             commentArr:[
                 {id:1, userId:'_apink_pinkpanda', content:'Apink🐼💖❤️💙💜 #APINK #에이핑크 #CHORONG #박초롱 #BOMI #윤보미 #EUNJI #정은지 #NAEUN #손나은 #NAMJOO #김남주 #HAYOUNG #오하영'},
                 {id:2, userId:'i_want.apink', content:'YAAAAAAAAAAAA QUE RAINHAS ❤️🙌 MEU DEUS QUE LINDAAAS ELAS E TÃO MARAVILHOSAS 😔❤ MAIS EU NÃO AGUENTO VER ISSO PQ EU VOU DESMAIAR KSKSKS'}
@@ -16,21 +17,29 @@ class Feeds extends Component {
     }
 
     commentChange = (e) => {
-        this.setState({
-            comment : e.target.value
-        });
-        
-        console.log(e.target.value.length)
-        if(e.target.value.length > 0){
+        // console.log('this is onChange');
+        // console.log(this.state.textKeyValue);
+        // console.log(e.target.value);
+        // console.log(e.target.value.length);
+        if(this.state.textKeyValue === 13 && e.target.value.length <= 1){
+            // 엔터죽이기
+            // console.log('This is Nullenter')
             this.setState({
-                buttonDisable : false
+                comment:'',
+                textKeyValue: ''
+            })
+            return;
+        } else {
+            this.setState({
+                comment : e.target.value,
+                buttonDisable: false,
             });
+            
         }
-        console.log(this.state.buttonDisable)
     }
 
     commentUp = (e) => {
-        
+        console.log('this is commentUp')
         if(this.state.comment.length < 0){
             return;
         }else{
@@ -38,45 +47,47 @@ class Feeds extends Component {
             commentArr.push({id: (this.state.commentArr.length+1), userId: this.state.myId, content: this.state.comment})
 
             this.setState({
-                commentArr:commentArr
-            })
-
-            this.setState({
+                commentArr:commentArr,
                 comment:'',
-                buttonDisable:true
+                buttonDisable:true,
             })
-
         }
         // e.target.value;
     }
-
     textareaKeyDown = (e) => {
-        console.log(e.keyCode)
-        if(e.keyCode === 13){
-            e.preventDefault();
-        }
-    }
-/* 
-    textareaKeyUp = (e) => {
-        const commentValue = document.querySelector('.commentUpBox textarea');
-        const commentUploadButton = document.querySelector('#commentUpload');
+        console.log('this is key down')
+        if (e.keyCode === 13) {
+            this.setState({
+                textKeyValue: e.keyCode
+            });
             
-        if(commentValue.value.length > 0){
-            this.setState({
-                disValue:false
-            });
-            commentUploadButton.style.color = 'blue';
-            commentUploadButton.style.cursor = 'pointer';
-            e.stopPropagation();
-        }else{
-            commentUploadButton.style.color = 'skyblue';
-            commentUploadButton.style.cursor = 'auto';
-            this.setState({
-                disValue:true
-            });
+            // e.preventDefault();
         }
+        console.log(this.state.textKeyValue);
+    }
+
+    textareaKeyUp = (e) => {
+        // console.log('this is keyup');
+        // console.log(e.target.value.length);
+        // console.log(e.target.value);
+        if (e.keyCode === 13) {
+            if (e.target.value.length === 1 ) {
+                e.preventDefault();
+                // console.log(e.target.value);
+                this.setState({
+                    comment: '',
+                    buttonDisable: true,
+                    textKeyValue: e.keyCode
+                })
+            } else if (e.target.value.length > 1 ) {
+                // console.log(e.target.value)
+                e.stopPropagation();
+                this.commentUp();
+            }
+        }
+        
     } 
-*/
+
 /* 
     commentUp = (e) => {
         // alert(commentValue.value.length);
@@ -106,7 +117,7 @@ class Feeds extends Component {
         //     commentList.push(<li key={commentArr[i].id}><p><a>{commentArr[i].userId} </a>{commentArr[i].content}</p></li>);
         //     i = i + 1;
         // }
-        console.log(this.state.commentArr);
+        // console.log(this.state.commentArr);
 
         return(
         <>
@@ -176,7 +187,7 @@ class Feeds extends Component {
                                         <li key={ele.id}>
                                             <p>
                                                 <a>
-                                                    {ele.userId}
+                                                    {ele.userId  + ' '}
                                                 </a>
                                                 {ele.content}
                                             </p>
@@ -197,7 +208,7 @@ class Feeds extends Component {
                                 </button>
                                 <textarea type="text" placeholder="댓글 달기..." 
                                 onChange={this.commentChange}
-                                onKeyDown={this.textareaKeyDown}
+                                onKeyDown={this.textareaKeyDown} 
                                 onKeyUp={this.textareaKeyUp}
                                 value={this.state.comment}
                                 ></textarea>

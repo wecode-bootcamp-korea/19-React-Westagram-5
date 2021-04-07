@@ -18,9 +18,35 @@ class Login extends Component {
     }
 
     goToMain = () => {
-        console.log(this.props.history);
-        this.props.history.push('/maindh');
-        console.log(this.props.history);
+        // this.props.history.push('/maindh');
+        fetch('http://10.58.5.57:8000/users/signin', {
+            method: 'POST',
+            body: JSON.stringify({
+                email: this.state.inputId,
+                password: this.state.inputPass,
+                name: '김동현',
+                phone_number:'010-3148-8660'
+            })
+        })
+        
+        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+            console.log(res.status)
+            if(res.MESSAGE === 'SUCCESS'){
+                localStorage.setItem('accessToken', res.ACCESS_TOKEN )
+            }else{
+                alert("에러");
+            } 
+/* 
+                if(res.success) {
+                    alert("저장 완료");
+                else if(res.MESSGAGE === 'DUPLICATED EMAIL'){
+                    alert("가입된 이메일 입니다.");
+                } */
+        })
+        
+
     }
     /*
     inputPasswdKeydown =  (e) => {
@@ -71,11 +97,6 @@ class Login extends Component {
             inputPass : e.target.value
         });
 
-        console.log('------');
-        console.log(this.state.inputId);
-        console.log(this.state.inputPass);
-        console.log(this.state.inputId.indexOf('@'));
-        console.log(e.target.value);
         if(this.state.inputId.indexOf('@') > -1 && e.target.value.length > 4) {
             this.setState({
                 disValue:false
@@ -85,6 +106,9 @@ class Login extends Component {
                 disValue:true
             });
         }
+
+
+
     }
 
     render() {
