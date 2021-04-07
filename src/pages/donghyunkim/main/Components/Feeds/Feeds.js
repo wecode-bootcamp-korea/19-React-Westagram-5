@@ -97,15 +97,16 @@ class Feeds extends Component {
         commentValue.appendChild(newTagLi);
     } */
     render() {
-        let commentList = [];
-        let commentArr = this.state.commentArr;
+        // let commentList = [];
+        // let commentArr = this.state.commentArr;
 
-        let i = 0;
-        // console.log(commentArr.length)
-        while(i < commentArr.length){
-            commentList.push(<li key={commentArr[i].id}><p><a>{commentArr[i].userId} </a>{commentArr[i].content}</p></li>);
-            i = i + 1;
-        }
+        // let i = 0;
+        // // console.log(commentArr.length)
+        // while(i < commentArr.length){
+        //     commentList.push(<li key={commentArr[i].id}><p><a>{commentArr[i].userId} </a>{commentArr[i].content}</p></li>);
+        //     i = i + 1;
+        // }
+        console.log(this.state.commentArr);
 
         return(
         <>
@@ -169,7 +170,21 @@ class Feeds extends Component {
                         </div>
                         <div class="feedComment">
                             <ul>
-                                {commentList}
+                                {this.state.commentArr.map(ele => {
+                                    return(
+                                        // key prop 추가
+                                        <li key={ele.id}>
+                                            <p>
+                                                <a>
+                                                    {ele.userId}
+                                                </a>
+                                                {ele.content}
+                                            </p>
+                                        </li>
+                                    )
+                                })}
+
+                                {/* {commentList} */}
                             </ul>
                         </div>
                         <div class="feedTime">

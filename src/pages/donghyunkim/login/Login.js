@@ -8,7 +8,9 @@ class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            disValue:true
+            disValue:true,
+            inputId:'',
+            inputPass:''
         }
         // this.props.loginButton.disable = false;
         // loginButton.disable = false;
@@ -47,6 +49,18 @@ class Login extends Component {
         }
     }
 
+    handleInputId = (e) => {
+        this.setState({
+            inputId : e.target.value
+        });
+    }
+
+    handleInputPass = (e) => {
+        this.setState({
+            inputPass : e.target.value
+        });
+    }
+
     render() {
         return (
             <>
@@ -54,8 +68,10 @@ class Login extends Component {
                 <section>
                     <h1>Westagram</h1>
                     <input class="sectionInput-width" id="userId-input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일"
+                    onChange={this.handleInputId}
                     />
                     <input class="sectionInput-width" id="passwd-input"  type="password" placeholder="비밀번호"
+                    onChange={this.handleInputPass}
                     onKeyDown={this.inputPasswdKeydown}
                     />
                     <button className="sectionInput-width" id="login-button" 
