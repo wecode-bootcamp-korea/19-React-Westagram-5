@@ -8,74 +8,57 @@ import Come from "images/seripark/Photo3.png";
 import True from "images/seripark/Photo.png";
 
 class MainCon1 extends Component{
-    inputChange1 = () => {
 
-        const commentInput = document.querySelector('.commentInput');
-        const commentBtn = document.querySelector('.commentBtn');
-        const inputLength = commentInput.value.length;
-        // for (var i=0; i<commentInput.length; i++) {
-        //         commentBtn[i].setAttribute('style', 'background-color:#333;');
-        //     }
-        if(inputLength === 0){
-            commentBtn.style.backgroundColor = "transparent";
-        }
-        if(inputLength>0){
-            commentBtn.style.backgroundColor ="red";
+    constructor(){
+        super();
+
+        this.state = {
+            comment: '',
+            commentLists: [],
+            color:" ",
+            changeEmoji:false
         }
     }
-    // inputChange2 = () => {
-    //     // var container = document.querySelector("#test");
-    //     // var matches = container.querySelectorAll("div.highlighted > p");
-    //     const commentInput = document.querySelector('commentInput');
-    //     const commentBtn = document.querySelector('.commentBtn');
-        
-    //     const inputLength = commentInput.value.length;
-    //     // for (var i=0; i<commentInput.length; i++) {
-    //     //         commentBtn[i].setAttribute('style', 'background-color:#333;');
-    //     //     }
-    //     if(inputLength === 0){
-    //         commentBtn.style.backgroundColor = "transparent";
-    //     }
-    //     if(inputLength>0){
-    //         commentBtn.style.backgroundColor ="red";
-    //     }
-    // }
-    // inputChange3 = () => {
-    //     // var container = document.querySelector("#test");
-    //     // var matches = container.querySelectorAll("div.highlighted > p");
-    //     const commentInput = document.getElementsByTagName('input');
-    //     const commentBtn = document.getElementsByTagName('button');
-        
-    //     // const inputLength = commentInput.value.length;
-    //     for (var i=0; i<commentInput.length; i++) {
-    //             commentBtn[i].setAttribute('style', 'background-color:#333;');
-    //         }
-    //     // if(inputLength === 0){
-    //     //     commentBtn.style.backgroundColor = "transparent";
-    //     // }
-    //     // if(inputLength>0){
-    //     //     commentBtn.style.backgroundColor ="red";
-    //     // }
-    // }
-    // writingComments = () => {
-    //     const inpKey = document.getElementByClass(".commentInput");
-    //     const btnInsert = document.getElementByClass(".commentBtn");
-    //     const isOutput = document.getElementByClass(".commentAdd");
+    changingEmoji= ()=> {
+        this.setState({
+            changeEmoji:!this.state.changeEmoji
+        })
+    }
+    handleInput = e => {
+        this.setState({
+            comment : e.target.value
+        })
+    }
 
-    //     btnInsert.onclick=function(){
-    //         const key= inpKey.value;
-           
-    //         if (key){
-    //             localStorage.setItem(key);
-    //             location.reload();//refresh 시키는것 
-    //         }
-    //     }
-    //     for (let i=0; i <localStorage.length; i++){
-    //         const key= localStorage.key(i);
-    //         // const value=localStorage.getItem(key);
-    //         isOutput.innerHTML += `${key}<br/>`;
-    //     }
-    // }
+    addInput = () => {
+        let commentArray = this.state.commentLists;
+        commentArray.push(this.state.comment);
+
+        this.setState({
+            commentLists: commentArray,
+            comment: '',
+            color:''
+        })
+    }
+    inputColorChange = (e) => {
+        //자바스크립트 코드
+
+        // const commentInput = document.querySelector('.commentInput');
+        // const commentBtn = document.querySelector('.commentBtn');
+        // const inputLength = commentInput.value.length;
+       
+        // if(inputLength === 0){
+        //     commentBtn.style.backgroundColor = "transparent";
+        // }
+        // if(inputLength>0){
+        //     commentBtn.style.backgroundColor ="#c0c0c0";
+        // }
+       
+        this.setState({
+           color:'grey'
+        })
+       
+    }
 
     render(){
         return(
@@ -110,6 +93,8 @@ class MainCon1 extends Component{
                             <div className="subPost1">
                                 <div className="emojis">
                                     <i className="far fa-heart"></i>
+                                    {/* {this.state.changeEmoji ? <i className="far fa-heart"></i> : <i className="fas fa-heartbeat"></i>} */}
+                                    <i className="fas fa-heartbeat"></i>
                                     <i className="far fa-comment"></i>
                                     <i className="far fa-paper-plane"></i>
                                     <div className="numLike">좋아요 10892개</div>
@@ -117,11 +102,18 @@ class MainCon1 extends Component{
                                 <i className="far fa-bookmark"></i>
                             </div>
                             <div className="subPost2">
-                                <p className="commentAdd"></p>
+                            {this.state.commentLists.map(ele => {
+                                    return(
+                                <div class="tidy">
+                                    <div>{ele}</div>
+                                    <div>&#10084;</div>
+                                </div>
+                                )
+                            })}
                             </div>
                             <div className="subPost3">
-                                <input type="text" className="commentInput" onChange={this.inputChange1}/>
-                                <button type="submit" className="commentBtn" value="Submit" onChange={this.inputChange1}>게시</button>
+                                <input type="text" className="commentInput"  onChange={this.handleInput} onKeyPress={this.inputColorChange}/>
+                                <button type="submit" className="commentBtn" value="Submit" onClick={this.addInput} style={{backgroundColor:this.state.color}}>게시</button>
                             </div>
                         </div>
                     </div>
@@ -145,11 +137,18 @@ class MainCon1 extends Component{
                                 <i className="far fa-bookmark"></i>
                             </div>
                             <div className="subPost2">
-                                <p className="commentAdd"></p>
+                            {this.state.commentLists.map(ele => {
+                                    return(
+                                    <div class="tidy">
+                                        <div>{ele}</div>
+                                        <div>&#10084;</div>
+                                    </div>
+                                )
+                            })}
                             </div>
                             <div className="subPost3">
-                                <input type="text" className="commentInput" onChange={this.inputChange2}/>
-                                <button type="submit" className="commentBtn" value="Submit" onChange={this.inputChange2}>게시</button>
+                                <input type="text" className="commentInput" onChange={this.handleInput}  onKeyPress={this.inputColorChange}/>
+                                <button type="submit" className="commentBtn" value="Submit" onClick={this.addInput} style={{backgroundColor:this.state.color}}>게시</button>
                             </div>
                         </div>
                     </div>
@@ -173,11 +172,18 @@ class MainCon1 extends Component{
                                 <i className="far fa-bookmark"></i>
                             </div>
                             <div className="subPost2">
-                                <p className="commentAdd"></p>
+                            {this.state.commentLists.map(ele => {
+                                    return(
+                                    <div class="tidy">
+                                        <div>{ele}</div>
+                                        <div>&#10084;</div>
+                                    </div>
+                                )
+                            })}
                             </div>
                             <div className="subPost3">
-                                <input type="text" className="commentInput" onChange={this.inputChange3}/>
-                                <button type="submit" className="commentBtn" value="Submit" onChange={this.inputChange3}>게시</button>
+                                <input type="text" className="commentInput" onChange={this.handleInput}  onKeyPress={this.inputColorChange}/>
+                                <button type="submit" className="commentBtn" value="Submit" onClick={this.addInput} style={{backgroundColor:this.state.color}}>게시</button>
                             </div>
                         </div>
                     </div>

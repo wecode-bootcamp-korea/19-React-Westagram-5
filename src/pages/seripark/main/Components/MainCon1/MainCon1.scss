@@ -42,8 +42,8 @@
             justify-content: center;
             align-items: center;
             img{
-                width:80%;
-                height:60%;
+                width:70%;
+                height:50%;
                 border-radius: 50%;
                 padding:0 0.5rem;
             }
@@ -116,6 +116,7 @@
     .subPost1{
         display:flex;
         justify-content: space-between;
+        border:1px solid red;
         .fa-bookmark{
             font-size:2rem;
             margin-right:10px;
@@ -127,13 +128,23 @@
         }
     }
     .subPost2{
+        border:1px solid green;
+        height:6rem;
         .commentAdd{
             height:6rem;
             border:1px solid #c0c0c0;
         }
+        .tidy{
+            display:flex;
+            div:first-child{
+                margin-left:15px;
+                width:100%;
+                overflow:hidden;
+            }
+        }
     }
     .subPost3{
-        background-color:yellow;
+        border:1px solid purple;
         width:100%;
         height:30%;
         .commentInput{

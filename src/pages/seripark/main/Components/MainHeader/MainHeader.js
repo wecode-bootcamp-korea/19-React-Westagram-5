@@ -3,7 +3,17 @@ import "../MainHeader/MainHeader.scss";
 import Cat from "images/seripark/download2.jpg"
 
 class MainHeader extends Component{
-    
+    constructor(){
+        super();
+        this.state= {
+            isBoxVisible : false
+        }
+    }
+    toggleBox= ()=>{
+        this.setState({
+            isBoxVisible: !this.state.isBoxVisible
+        })
+    }
     render(){
         return(
             <header className="mainLogoWrap">
@@ -14,8 +24,8 @@ class MainHeader extends Component{
                         <i className="far fa-paper-plane"></i>
                         <i className="far fa-compass"></i>
                         <i className="far fa-heart"></i>
-                        <img src={Cat} alt="#"/>
-                        <ul className="profile">
+                        <img onClick={this.toggleBox} src={Cat} alt="#"/>
+                        <ul className={(this.state.isBoxVisible ? 'profile' : 'hidden')}>
                             <li><i className="far fa-user-circle"></i>프로필</li>
                             <li><i className="far fa-bookmark"></i>저장됨</li>
                             <li><i className="fas fa-cog"></i>설정</li>
