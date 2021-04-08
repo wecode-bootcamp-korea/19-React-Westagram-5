@@ -1,0 +1,19 @@
+* a {
+  text-decoration: none;
+  color: black;
+}
+
+.section {
+  margin: 0 122px;
+  height: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article {
+  width: 600px;
+  height: 100%;
+  margin: auto;
+}

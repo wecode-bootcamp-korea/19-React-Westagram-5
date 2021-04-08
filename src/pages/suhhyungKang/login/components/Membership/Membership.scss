@@ -1,0 +1,27 @@
+.memberShip {
+  background-color: white;
+  border: 1px solid lightgray;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  width: 350px;
+  height: 63px;
+  padding: 10px 0px;
+
+  .none {
+    width: 189.938px;
+    height: 48px;
+    margin-top: 30px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .hi {
+    color: #0095f6;
+    color: rgba(var(--d69, 0, 149, 246), 1);
+    align-items: center;
+    margin-left: 5px;
+  }
+}

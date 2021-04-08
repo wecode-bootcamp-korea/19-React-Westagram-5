@@ -1,0 +1,177 @@
+.mainPhotoComment {
+  width: 599px;
+
+  margin-top: -5px;
+  border: 1px solid lightgray;
+
+  .mainPhotoIcon {
+    font-size: 24px;
+    margin-top: 8px;
+    justify-content: space-between;
+
+    display: flex;
+    div {
+      * {
+        margin-left: 10px;
+      }
+    }
+
+    .fa-bookmark {
+      margin-right: 10px;
+    }
+  }
+  .likeComment {
+    .like {
+      margin-top: 13px;
+      font-size: 14px;
+      display: flex;
+      margin-left: 10px;
+    }
+    .likeName {
+      margin-top: 8px;
+    }
+
+    .sayHi {
+      display: flex;
+    }
+
+    .likeName1 {
+      font-weight: bold;
+    }
+
+    .hiOt {
+      display: flex;
+      margin-left: 10px;
+
+      .Hello {
+        margin-left: 5px;
+      }
+    }
+
+    .Comments {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+
+      .NameComments {
+        display: flex;
+
+        margin-left: 10px;
+
+        .library {
+          margin-left: 5px;
+        }
+      }
+      .place {
+        display: flex;
+
+        .heartBox {
+          margin-right: 10px;
+          margin-top: 7px;
+          font-size: 16px;
+        }
+        .libraryBt {
+          color: lightblue;
+          border: none;
+          background-color: white;
+          font-size: 14px;
+          margin-right: 10px;
+          margin-top: 4px;
+        }
+      }
+    }
+
+    .date {
+      color: lightgray;
+      font-size: 8px;
+      display: flex;
+      margin-left: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .likeHeartBox {
+      display: flex;
+      justify-content: space-between;
+
+      .syeongiiId {
+        display: flex;
+       
+        .commentId{
+          margin-left: 10px;
+          font-weight: bold;
+       }
+
+       .newComment{
+         margin-left:10px;
+       }
+      }
+      
+     
+
+      .heartDelete {
+        display: flex;
+        margin-bottom: 5px;
+      }
+
+      .heartBoxBT {
+        margin-top: 7px;
+      }
+      .delete {
+        margin-left: 8px;
+        margin-right: 10px;
+        margin-top: 4px;
+        color: lightblue;
+        border: none;
+        background-color: white;
+        font-size: 14px;
+      }
+    }
+
+    .emoticon {
+      border-top: 1px solid lightgray;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      height: 35px;
+
+      .commentBox {
+        width: 480px;
+        background-color: white;
+        margin-left: 15px;
+        height: 80%;
+        border: none;
+        outline: none;
+      }
+    }
+
+    .fa-smile {
+      margin-left: 10px;
+    }
+    .buttonUpload {
+      margin-left: 22px;
+
+      .upload {
+        font-size: 15px;
+        text-align: right;
+        border-style: none;
+        outline: none;
+        background-color: #ffff;
+        color: lightskyblue;
+      }
+
+      .emoticon input {
+        text-align: center;
+        outline: none;
+        box-shadow: none;
+        background-color: #ffff;
+        border: none;
+        height: 14px;
+      }
+    }
+  }
+}
+
+.colorRed{
+  background: red;
+}

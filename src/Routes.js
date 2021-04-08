@@ -1,9 +1,5 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import donghyunkimLogin from './pages/donghyunkim/login/Login';
 import donghyunkimMain from './pages/donghyunkim/main/Main';
@@ -11,8 +7,8 @@ import dongeeseoLogin from './pages/dongeeseo/login/Login';
 import dongeeseoMain from './pages/dongeeseo/main/Main';
 import seriparkLogin from './pages/seripark/login/Login';
 import seriparkMain from './pages/seripark/main/Main';
-import suhhyungKangLogin from './pages/suhhyungKang/login/Login';
-import suhhyungKangMain from './pages/suhhyungKang/main/Main';
+import suhhyungKangLogin from './pages/suhhyungKang/login/LoginSyeongii';
+import suhhyungKangMain from './pages/suhhyungKang/main/MainSyeongii';
 
 class Routes extends React.Component {
   render() {
@@ -29,8 +25,14 @@ class Routes extends React.Component {
           <Route exact path="/mainsyeongii" component={suhhyungKangMain} />
         </Switch>
       </Router>
-    )
+    );
   }
 }
 
+
 export default Routes;
+
+
+
+
+
