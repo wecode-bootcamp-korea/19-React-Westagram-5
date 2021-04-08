@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Comments from '../Comments/Comments';
+import CommentList from '../CommentList/CommentList';
+import COMMENT from './Comment';
 import './Feeds.scss'
 
 class Feeds extends Component {
@@ -9,12 +10,29 @@ class Feeds extends Component {
             myId : 'kdh24',
             comment: '',
             textKeyValue: '',
-            commentArr:[
-                {id:1, userId:'_apink_pinkpanda', content:'Apink🐼💖❤️💙💜 #APINK #에이핑크 #CHORONG #박초롱 #BOMI #윤보미 #EUNJI #정은지 #NAEUN #손나은 #NAMJOO #김남주 #HAYOUNG #오하영'},
-                {id:2, userId:'i_want.apink', content:'YAAAAAAAAAAAA QUE RAINHAS ❤️🙌 MEU DEUS QUE LINDAAAS ELAS E TÃO MARAVILHOSAS 😔❤ MAIS EU NÃO AGUENTO VER ISSO PQ EU VOU DESMAIAR KSKSKS'}
-            ],
+            commentArr:[],
+            //     {id:1, userId:'_apink_pinkpanda', content:'Apink🐼💖❤️💙💜 #APINK #에이핑크 #CHORONG #박초롱 #BOMI #윤보미 #EUNJI #정은지 #NAEUN #손나은 #NAMJOO #김남주 #HAYOUNG #오하영'},
+            //     {id:2, userId:'i_want.apink', content:'YAAAAAAAAAAAA QUE RAINHAS ❤️🙌 MEU DEUS QUE LINDAAAS ELAS E TÃO MARAVILHOSAS 😔❤ MAIS EU NÃO AGUENTO VER ISSO PQ EU VOU DESMAIAR KSKSKS'}
+            // ],
             buttonDisable : true
         }
+    }
+
+    // componentDidMount() {
+    //     this.setState({
+    //         commentArr: COMMENT
+    //     });
+    // }
+    componentDidMount() {
+        fetch('http://localhost:3000/data/commentData.json', {
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    commentArr: data,
+                })
+            })
     }
 
     commentChange = (e) => {
@@ -45,7 +63,7 @@ class Feeds extends Component {
             return;
         }else{
             let commentArr = this.state.commentArr;
-            commentArr.push({id: (this.state.commentArr.length+1), userId: this.state.myId, content: this.state.comment})
+            commentArr.push({id: (this.state.commentArr.length+1), userName: this.state.myId, content: this.state.comment})
 
             this.setState({
                 commentArr:commentArr,
@@ -89,36 +107,14 @@ class Feeds extends Component {
         
     } 
 
-/* 
-    commentUp = (e) => {
-        // alert(commentValue.value.length);
-        const myId = 'kdh24';
-        const commentValue = document.querySelector('.feedComment>ul');
-        const newTagLi = document.createElement("li");
-        const newTagP = document.createElement("p");
-        const newTagA = document.createElement("a");
-
-        let getCommentText = document.querySelector('form textarea');
-        newTagA.innerHTML = myId + " ";
-        newTagP.appendChild(newTagA);
-        newTagP.append(getCommentText.value);
-        console.log(getCommentText);
-        getCommentText.value = "";
-
-        newTagLi.appendChild(newTagP);
-        commentValue.appendChild(newTagLi);
-    } */
     render() {
-        // let commentList = [];
-        // let commentArr = this.state.commentArr;
-
-        // let i = 0;
-        // // console.log(commentArr.length)
-        // while(i < commentArr.length){
-        //     commentList.push(<li key={commentArr[i].id}><p><a>{commentArr[i].userId} </a>{commentArr[i].content}</p></li>);
-        //     i = i + 1;
-        // }
-        // console.log(this.state.commentArr);
+        const { commentArr } = this.state;
+        const { comment } = this.state;
+        const { buttonDisable } = this.state;
+        const { commentChange } = this;
+        const { textareaKeyDown } = this;
+        const { textareaKeyUp } = this;
+        const { commentUp} = this;
 
         return(
         <>
@@ -182,8 +178,8 @@ class Feeds extends Component {
                         </div>
                         <div class="feedComment">
                             <ul>
-                                    <Comments key={this.state.commentArr.id}
-                                    commentArr={this.state.commentArr}
+                                    <CommentList key={commentArr.id}
+                                    commentArr={commentArr}
                                     />
                             </ul>
                         </div>
@@ -196,16 +192,15 @@ class Feeds extends Component {
                                     <i class="far fa-smile fa-5x"></i>
                                 </button>
                                 <textarea type="text" placeholder="댓글 달기..." 
-                                onChange={this.commentChange}
-                                onKeyDown={this.textareaKeyDown} 
-                                onKeyUp={this.textareaKeyUp}
-                                value={this.state.comment}
+                                onChange={commentChange}
+                                onKeyDown={textareaKeyDown} 
+                                onKeyUp={textareaKeyUp}
+                                value={comment}
                                 ></textarea>
                                 <button 
-                                className={'commentUpButton ' + (this.state.buttonDisable ? 'commentUploadFalse' : 'commentUpload') } 
-                                type="button" disabled={this.state.buttonDisable}
-                                onClick={this.commentUp}
-                                // disabled={this.state.disValue}
+                                className={'commentUpButton ' + (buttonDisable ? 'commentUploadFalse' : 'commentUpload') } 
+                                type="button" disabled={buttonDisable}
+                                onClick={commentUp}
                                 >
                                     게시
                                 </button>

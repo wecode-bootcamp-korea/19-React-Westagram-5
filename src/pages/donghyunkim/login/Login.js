@@ -21,6 +21,9 @@ class Login extends Component {
         // this.props.history.push('/maindh');
         fetch('http://10.58.5.57:8000/users/signin', {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
             body: JSON.stringify({
                 email: this.state.inputId,
                 password: this.state.inputPass,
@@ -28,7 +31,6 @@ class Login extends Component {
                 phone_number:'010-3148-8660'
             })
         })
-        
         .then(res => res.json())
         .then(res => {
             console.log(res)

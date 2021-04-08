@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import './Comments.scss'
+import './CommentList.scss'
 
-export class Comments extends Component {
+export class CommentList extends Component {
     render() {
         return (
             <>
@@ -11,7 +11,7 @@ export class Comments extends Component {
                         <li>
                             <p>
                                 <a>
-                                    {ele.userId  + ' '}
+                                    {ele.userName  + ' '}
                                 </a>
                                 {ele.content}
                             </p>
@@ -24,4 +24,4 @@ export class Comments extends Component {
     }
 }
 
-export default Comments
+export default CommentList
