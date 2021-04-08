@@ -10,13 +10,36 @@ class Login extends React.Component {
     constructor(){
         super();
         this.state = {
+            inputIdValue: '',
+            inputPwValue: '',
+            offColor: 'rgb(178, 223, 252)'
+        }       
+};
+handleIdInput = e => {
+    this.setState({
+        inputIdValue: e.target.value
+    })
+};
+
+handlePwInput = e => {
+    this.setState({
+        inputPwValue: e.target.value
+    })
+};
+
+changeBtnColor = () => {
+    this.setState({
+        onColor: 'rgb(3, 149, 246)'
+    })
+}
+
+       /* this.state = {
             id: '',
             pw: '',
             name: 'hregre',
             phone_number: '234234234'
         }
     }
-
     
     changeValue = (e) => {
         e.preventDefault();
@@ -49,8 +72,9 @@ class Login extends React.Component {
                     alert('바보');
                 }
             }
-            );
-    }
+        );*/
+   
+
     
 
     render() { 
@@ -61,8 +85,8 @@ class Login extends React.Component {
                     <h1> Westagram </h1>
                 </div>
                 <form className = "inputUserInfo" onChange={this.changeValue}>
-                    <input className = "Id" name='id' type = "text" placeholder = "Phone number, username, or email" />
-                    <input className = "Pw" name='pw' type = "password"  placeholder = "Password" />
+                    <input className = "Id" name='id' type = "text" placeholder = "Phone number, username, or email" value = {this.state.inputIdValue} onChange = {this.handleIdInput} />
+                    <input className = "Pw" name='pw' type = "password"  placeholder = "Password" value = {this.state.inputPwValue} onChange = {this.handlePwInput} />
                     <button className = "logInButton" type = "button" onClick={this.goToMain}>
                     Log In       
                     </button>
@@ -100,7 +124,7 @@ class Login extends React.Component {
                 </div>
             </form>
         </div>
-        )
+        );
     }
 }
 

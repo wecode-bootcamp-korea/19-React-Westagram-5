@@ -17,6 +17,8 @@ import hoian from 'images/donz/hoian.jpg'
 
 
 class Main extends Component {
+
+    
   render() {
     return(
     <div className = "whole">
