@@ -12,7 +12,6 @@ class Login extends React.Component {
         this.state = {
             inputIdValue: '',
             inputPwValue: '',
-            offColor: 'rgb(178, 223, 252)'
         }       
 };
 handleIdInput = e => {
@@ -26,12 +25,6 @@ handlePwInput = e => {
         inputPwValue: e.target.value
     })
 };
-
-changeBtnColor = () => {
-    this.setState({
-        onColor: 'rgb(3, 149, 246)'
-    })
-}
 
        /* this.state = {
             id: '',
@@ -77,7 +70,8 @@ changeBtnColor = () => {
 
     
 
-    render() { 
+    render() {
+        const isBtnAble = this.state.inputIdValue.includes('@') && this.state.inputPwValue.length > 5 ? 'onColor':'offColor';
         return (
        <div className = "login">
             <main className = "inputUser">
@@ -87,7 +81,7 @@ changeBtnColor = () => {
                 <form className = "inputUserInfo" onChange={this.changeValue}>
                     <input className = "Id" name='id' type = "text" placeholder = "Phone number, username, or email" value = {this.state.inputIdValue} onChange = {this.handleIdInput} />
                     <input className = "Pw" name='pw' type = "password"  placeholder = "Password" value = {this.state.inputPwValue} onChange = {this.handlePwInput} />
-                    <button className = "logInButton" type = "button" onClick={this.goToMain}>
+                    <button className = {isBtnAble + " logInButton"} type = "button" onClick={this.goToMain}>
                     Log In       
                     </button>
                 </form>

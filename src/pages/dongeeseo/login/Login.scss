@@ -59,13 +59,19 @@
                font-size: 13px;
                font-style: bold;
                color: #ffffff;
-               background-color: rgb(178, 223, 252);
                border: none;
                border-radius: 3px;
                margin: 8px auto;
                outline: none;
                border: none;
-             
+            }
+
+            .onColor{
+               background-color: rgb(82, 179, 243); 
+            }
+
+            .offColor{
+               background-color: rgb(178, 223, 252);
             }
          }
 
