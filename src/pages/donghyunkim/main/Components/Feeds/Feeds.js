@@ -122,8 +122,6 @@ class Feeds extends Component {
     };
 
     render() {
-        // console.log(this.state.feedArr);
-        // console.log(this.state.commentArr);
         const { commentArr, comment, buttonDisable, feedArr } = this.state;
         const { commentChange, textareaKeyDown, textareaKeyUp, commentUp } = this;
 
