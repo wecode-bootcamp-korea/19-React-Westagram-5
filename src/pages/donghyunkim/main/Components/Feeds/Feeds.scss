@@ -1,8 +1,8 @@
 @import url(https://use.fontawesome.com/releases/v5.15.3/css/all.css);
 @import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
 
-body{
-    main{
+body {
+    main {
         width: 100%;
         height: 100%;
         position: fixed;
@@ -10,32 +10,32 @@ body{
         left: 0;
         display: flex;
         justify-content: center;
-        background-color:#FAFAFA; 
+        background-color: #fafafa;
         overflow: scroll;
     }
 }
-#feeds{
+#feeds {
     width: 614px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     overflow: scroll;
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
         display: none;
     }
 }
-#feedOnTop{
+#feedOnTop {
     width: 100%;
     height: 118px;
     margin-top: 30px;
     padding: 16px 0;
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     background-color: white;
-    ul{
+    ul {
         display: flex;
         justify-content: flex-start;
-        li{
+        li {
             width: 80px;
             height: 100px;
             display: flex;
@@ -43,16 +43,16 @@ body{
             flex-direction: column;
             list-style: none;
             margin-left: 10px;
-            > button{
+            > button {
                 background-color: white;
             }
-            img{
+            img {
                 width: 56px;
                 height: 56px;
                 border-radius: 30px;
                 border: 1px solid rgba(126, 124, 124, 0.5);
             }
-            div{
+            div {
                 display: none;
                 width: 62px;
                 height: 62px;
@@ -61,9 +61,9 @@ body{
                 top: -3px;
                 border: 1px solid red;
                 border-radius: 30px;
-                background-color: rgba( 255, 255, 255, 0 );
+                background-color: rgba(255, 255, 255, 0);
             }
-            span{
+            span {
                 display: block;
                 width: 70px;
                 height: 14px;
@@ -74,47 +74,45 @@ body{
             }
         }
     }
-    button{
+    button {
         width: 56px;
         height: 56px;
         position: relative;
     }
 }
-#main-right{
+#main-right {
     width: 293px;
     height: 100%;
     margin: 30px 0 0 28px;
     border: 1px solid blue;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
 }
-#feedBox{
+#feedBox {
     width: 100%;
-    height: 849px;
+    // height: 849px;
     margin-top: 24px;
     background-color: white;
-    border: 1px solid #DBDBDB;
-    .feedHeader{
+    border: 1px solid #dbdbdb;
+    .feedHeader {
         padding: 16px;
     }
-    div{
-        &:nth-of-type(2){
+    div {
+        &:nth-of-type(2) {
             padding: 0 6px;
         }
     }
 
-    .feedImg{
+    .feedImg {
         width: 612px;
     }
     button {
         background-color: white;
     }
-
-
 }
-.feedHeader{
+.feedHeader {
     width: 100%;
     height: 60px;
-    border-bottom: 1px solid #DBDBDB;
+    border-bottom: 1px solid #dbdbdb;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -122,15 +120,15 @@ body{
         width: 250px;
         display: block;
         position: relative;
-        a{
-            &:first-of-type{
+        a {
+            &:first-of-type {
                 width: 35px;
                 height: 35px;
                 position: absolute;
-                left:-5px;
+                left: -5px;
                 top: -5px;
-             }
-             &:nth-of-type(2){
+            }
+            &:nth-of-type(2) {
                 display: block;
                 width: 200px;
                 height: 20px;
@@ -139,21 +137,21 @@ body{
                 font-size: 12px;
                 font-weight: bold;
             }
-            img{
+            img {
                 width: 32px;
                 height: 32px;
                 border-radius: 30px;
             }
         }
     }
-    button{
+    button {
         width: 40px;
         height: 40px;
         padding: 8px;
         position: absolute;
         right: 10px;
         top: 10px;
-        div{
+        div {
             height: 26px;
             width: 25px;
             background-image: url(https://www.instagram.com/static/bundles/es6/sprite_core_32f0a4f27407.png/32f0a4f27407.png);
@@ -162,35 +160,35 @@ body{
         }
     }
 }
-.feedIcons{
+.feedIcons {
     display: flex;
     justify-content: space-between;
     margin-top: 4px;
-    button{
-        i{
-            font-size:24px;
+    button {
+        i {
+            font-size: 24px;
             vertical-align: super;
         }
     }
-    div{
+    div {
         height: 40px;
-        button{
+        button {
             width: 40px;
             height: 40px;
             padding: 8px;
         }
     }
 }
-.heartRepleDmBox{
-    button{
-        img{
+.heartRepleDmBox {
+    button {
+        img {
             width: 24px;
             height: 24px;
         }
     }
 }
-.feedLikeCnt{
-    p{
+.feedLikeCnt {
+    p {
         height: 17.6px;
         font-size: 14px;
         font-weight: bold;
@@ -198,54 +196,54 @@ body{
         padding: 0 16px;
     }
 }
-.feedTime{
+.feedTime {
     font-size: 12px;
     color: #8e8e8e;
     padding: 0 16px;
 }
-.commentUpBox{
-    border-top: 1px solid #DBDBDB;;
+.commentUpBox {
+    border-top: 1px solid #dbdbdb;
     height: 56px;
     margin-top: 4px;
     padding: 0 16px;
     display: flex;
     align-items: center;
-    form{
+    form {
         width: 100%;
         height: 40px;
         display: flex;
         align-items: center;
-        button{
-            &:first-of-type{
+        button {
+            &:first-of-type {
                 width: 40px;
                 height: 40px;
-                padding: 8px 16px 8px 0
+                padding: 8px 16px 8px 0;
             }
-            i{
+            i {
                 width: 24px;
                 height: 24px;
                 font-size: 24px;
-                vertical-align:middle;
+                vertical-align: middle;
             }
         }
-        textarea{
+        textarea {
             width: 493px;
             height: 18px;
             resize: none;
         }
     }
-       
-    .commentUpButton{
+
+    .commentUpButton {
         width: 30px;
         height: 17.6px;
         font-size: 14px;
         font-weight: bold;
     }
-    .commentUploadFalse{
+    .commentUploadFalse {
         color: skyblue;
         cursor: auto;
     }
-    .commentUpload{
+    .commentUpload {
         color: blue;
         cursor: pointer;
     }
