@@ -380,7 +380,6 @@
               }
             }
           }
-
           .comments {
             width: 540px;
             margin-top: 2px;
@@ -443,8 +442,21 @@
                   font-size: 13px;
                 }
 
-                .times {
-                  @extend .heart;
+                .removeBtn{
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: auto;
+                  margin: 0;
+                  padding-left: 2px;
+                  background: none;
+                  outline: none;
+                  border: none;
+
+                  .times {
+                    font-size: 10px;
+
+                  }
                 }
               }
             }

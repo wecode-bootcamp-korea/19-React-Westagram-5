@@ -26,6 +26,10 @@ handlePwInput = e => {
     })
 };
 
+goToMain = () => {
+    this.props.history.push('/mainsd');
+}
+
        /* this.state = {
             id: '',
             pw: '',
@@ -65,7 +69,9 @@ handlePwInput = e => {
                     alert('바보');
                 }
             }
-        );*/
+
+        );
+        */
    
 
     

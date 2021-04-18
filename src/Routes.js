@@ -16,7 +16,7 @@ import suhhyungKangLogin from './pages/suhhyungKang/login/Login';
 import suhhyungKangMain from './pages/suhhyungKang/main/Main';
 
 class Routes extends React.Component {
-  render() {
+  render() { 
     return (
       <Router>
         <Switch>

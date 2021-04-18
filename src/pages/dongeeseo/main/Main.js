@@ -1,50 +1,67 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import './Main.scss'
+import mainData from'./mainData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faHome, faEllipsisH, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane, faCompass, faHeart, faComment, faBookmark, faSmile } from '@fortawesome/free-regular-svg-icons';
 import olaf from 'images/donz/olaf.PNG'
-import bicycle from 'images/donz/bicycle.jpg'
 import cafe from 'images/donz/cafe.jpg'
-import cat from 'images/donz/cat.jpg'
-import deco from 'images/donz/deco.jpg'
-import surfing from 'images/donz/surfing.jpg'
-import jeju from 'images/donz/jeju.jpg'
-import madeleine from 'images/donz/madeleine.jpg'
-import hoian from 'images/donz/hoian.jpg'
-
 
 
 
 class Main extends Component {
-    constructor() {
-        super();
-        this.state = {
-            commentList: [],
-            comment: ''
-        }
-    }
 
-    handleInput = e => {
-        this.setState({
-            comment: e.target.value
-        })
-    }
-
-    addInput = () => {
-        let commentArray = this.state.commentList;
-        commentArray.push(this.state.comment);
-
-        this.setState({
-            commentList: commentArray,
+   state = {
             comment: '',
+            comments: [],
+            num:0
+        };
+   
+
+    writeComment = e => {
+        this.setState ({
+            comment: e.target.value,
         })
+        //console.log(e.target.value);
     }
 
+    handleKeyPress = e =>{
+        if(e.key === "Enter"){
+            if(!this.state.comment){
+                e.preventDefault();
+            } else {
+                return this.addReply();
+            }
+        }
+    };
+
+    addReply = () => {
+        this.setState({
+           comments: this.state.comments.concat({
+             num: this.num++,
+             comment: this.state.comment,
+            }),
+            comment: '',
+        });
+    }
+
+   
+
+    handleRemove = this.state.num => {
+        const { comments } = this.state;
+        const nextComments = comments.filter((comment) => {
+                return comment.num !== num;
+            });
+        this.setState({
+            comments: nextComments
+        });
+}
 
 
     render() {
+        const { comments } = this.state;
         return (
+           
             <div className="whole">
                 <header className="mainHeader">
                     <nav className="mainNav">
@@ -66,86 +83,20 @@ class Main extends Component {
                     <section className="feed">
                         <article className="viewStory">
                             <ul className="storyUl">
-                                <li className="storyList">
-                                    <div className="storyItem">
-                                        <button className="storyBtn">
-                                            <div className="storyPhoto">
-                                                <img alt="no img" className="storyImg" src={hoian} />
+                                {mainData.map((ele, index) =>{
+                                    return (
+                                        <li key={index} className="storyList">
+                                            <div className="storyItem">
+                                                <button className="storyBtn">
+                                                    <div className="storyPhoto">
+                                                        <img alt="no img" className="storyImg" src={ele.img} />
+                                                    </div>
+                                                    <div className="storyUser">{ele.user}</div>
+                                                </button>
                                             </div>
-                                            <div className="storyUser">Hoi!an</div>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li className="storyList">
-                                    <div className="storyItem">
-                                        <button className="storyBtn">
-                                            <div className="storyPhoto">
-                                                <img alt="no img" className="storyImg" src={bicycle} />
-                                            </div>
-                                            <div className="storyUser">rider_209</div>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li className="storyList">
-                                    <div className="storyItem">
-                                        <button className="storyBtn">
-                                            <div className="storyPhoto">
-                                                <img alt="no img" className="storyImg" src={cafe} />
-                                            </div>
-                                            <div className="storyUser">coffee&cake</div>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li className="storyList">
-                                    <div className="storyItem">
-                                        <button className="storyBtn">
-                                            <div className="storyPhoto">
-                                                <img alt="no img" className="storyImg" src={cat} />
-                                            </div>
-                                            <div className="storyUser">imasupercute</div>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li className="storyList">
-                                    <div className="storyItem">
-                                        <button className="storyBtn">
-                                            <div className="storyPhoto">
-                                                <img alt="no img" className="storyImg" src={deco} />
-                                            </div>
-                                            <div className="storyUser">cafe_Palbang</div>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li className="storyList">
-                                    <div className="storyItem">
-                                        <button className="storyBtn">
-                                            <div className="storyPhoto">
-                                                <img alt="no img" className="storyImg" src={olaf} />
-                                            </div>
-                                            <div className="storyUser">doUwanaa</div>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li className="storyList">
-                                    <div className="storyItem">
-                                        <button className="storyBtn">
-                                            <div className="storyPhoto">
-                                                <img alt="no img" className="storyImg" src={surfing} />
-                                            </div>
-                                            <div className="storyUser">hamsik_surf</div>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li className="storyList">
-                                    <div className="storyItem">
-                                        <button className="storyBtn">
-                                            <div className="storyPhoto">
-                                                <img alt="no img" className="storyImg" src={jeju} />
-                                            </div>
-                                            <div className="storyUser">donZ_209</div>
-                                        </button>
-                                    </div>
-                                </li>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </article>
                         <article className="viewUpload">
@@ -162,7 +113,7 @@ class Main extends Component {
                                 </div>
                             </div>
                             <div className="uploadImg">
-                                <img src={madeleine} className="mainImg" alt="no img" />
+                                <img src={cafe} className="mainImg" alt="no img" />
                             </div>
                             <div className="viewComment">
                                 <div className="feedbackIcon">
@@ -177,34 +128,35 @@ class Main extends Component {
                                 </div>
                                 <div className="uploaderWriting">
                                     <div className="userName">dongee_029</div>
-                                    <div className="userSentence">녹차마들렌,,가오나시 졸귀ㅎㅎ 할로윈기념!</div>
+                                    <div className="userSentence">치즈케이크 존맛탱~~~~~~~~~</div>
                                     <div className="showMoreWriting">
                                         <button className="showMore" type="button">More</button>
                                     </div>
                                 </div>
                                 <div className="comments">
                                     <ul className="replies">
-                                        <div className="viewAll">View all comments
-                                </div>
+                                        <div className="viewAll">View all comments </div>
                                         <li className="reply">
                                             <div className="userName">sheep&bird</div>
-                                            <div className="userSentence">맛은..?</div>
+                                            <div className="userSentence">지승이랑 간겨?</div>
                                             <div className="likeHeart">
                                                 <FontAwesomeIcon icon={faHeart} className="heart" />
                                                 <FontAwesomeIcon icon={faTimes} className="time" />
                                             </div>
                                         </li>
-                                        {this.state.commentList.map(word => {
-                                            return (
-                                                <li className="reply">
-                                                    <div className="userName"></div>
-                                                    <div className="userSentence">{word}</div>
+                                        {comments.map((text)=>{
+                                            return(
+                                                <li className="reply" key={text.num}>
+                                                    <div className="userName"> 동동</div>
+                                                    <div className="userSentence">{text.comment}</div>
                                                     <div className="likeHeart">
                                                         <FontAwesomeIcon icon={faHeart} className="heart" />
+                                                        <button className= 'removeBtn' onClick= {this.handleRemove(text.num)}>
                                                         <FontAwesomeIcon icon={faTimes} className="time" />
+                                                        </button>
                                                     </div>
                                                 </li>
-                                            );
+                                            )
                                         })}
                                     </ul>
                                 </div>
@@ -214,17 +166,17 @@ class Main extends Component {
                                 <span className="countDetail">days</span>
                                 <span>ago</span>
                             </div>
-                            <form className="addComment">
+                            <div className="addComment">
                                 <div className="smileIcon">
                                     <FontAwesomeIcon icon={faSmile} className="smile" />
                                 </div>
                                 <div className="inputComment">
-                                    <input className="addReply" type="text" placeholder="Add a comment" onKeyPress={this.addInput} value ={this.state.comment} />
+                                    <input className="addReply" type="text" placeholder="Add a comment" onChange={this.writeComment} onKeyPress={this.handleKeyPress} />
                                 </div>
                                 <div className="post">
-                                    <button className="postBtn" type="button" onClick={this.addInput} >Post</button>
+                                    <button className="postBtn" type="button" onClick={this.addReply } >Post</button>
                                 </div>
-                            </form>
+                            </div>
                         </article>
                     </section>
                 </main>
@@ -232,4 +184,5 @@ class Main extends Component {
         )
     }
 }
+
 export default Main
