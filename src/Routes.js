@@ -10,6 +10,7 @@ import donghyunkimLogin from './pages/donghyunkim/login/Login';
 import donghyunkimMain from './pages/donghyunkim/main/Main';
 import dongeeseoLogin from './pages/dongeeseo/login/Login';
 import dongeeseoMain from './pages/dongeeseo/main/Main';
+import Slider from './pages/dongeeseo/Slider/Slider';
 import seriparkLogin from './pages/seripark/login/Login';
 import seriparkMain from './pages/seripark/main/Main';
 import suhhyungKangLogin from './pages/suhhyungKang/login/Login';
@@ -24,6 +25,7 @@ class Routes extends React.Component {
           <Route exact path="/maindh" component={donghyunkimMain} /> 
           <Route exact path="/loginsd" component={dongeeseoLogin} />
           <Route exact path="/mainsd" component={dongeeseoMain} />
+          <Route exact path="/slider" component={Slider} />
           <Route exact path="/loginsp" component={seriparkLogin} />
           <Route exact path="/mainsp" component={seriparkMain} />
           <Route exact path="/loginsyeongii" component={suhhyungKangLogin} />

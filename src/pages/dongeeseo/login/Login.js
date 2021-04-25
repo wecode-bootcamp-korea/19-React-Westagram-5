@@ -30,7 +30,8 @@ goToMain = () => {
     this.props.history.push('/mainsd');
 }
 
-       /* this.state = {
+       /* 백엔드와 통신할 때 사용
+        this.state = {
             id: '',
             pw: '',
             name: 'hregre',
@@ -45,9 +46,8 @@ goToMain = () => {
         })
     }
 
-    goToMain = () => {
+   goToMain = () => {
         // this.props.history.push('/mainsd');
-
        fetch("http://10.58.2.36:8000/users/signin", {
             method: "POST",
             body: JSON.stringify({
@@ -69,7 +69,6 @@ goToMain = () => {
                     alert('바보');
                 }
             }
-
         );
         */
    

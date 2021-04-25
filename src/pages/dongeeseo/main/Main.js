@@ -1,29 +1,50 @@
-import React, { Component } from 'react'
-import './Main.scss'
-import mainData from'./mainData'
+import React, { Component } from 'react';
+import mainData from'./mainData';
+import './Main.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faHome, faEllipsisH, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane, faCompass, faHeart, faComment, faBookmark, faSmile } from '@fortawesome/free-regular-svg-icons';
-import olaf from 'images/donz/olaf.PNG'
-import cafe from 'images/donz/cafe.jpg'
-
-
+import olaf from 'images/donz/olaf.PNG';
+import cafe from 'images/donz/cafe.jpg';
 
 class Main extends Component {
+constructor(){
+    super();
+    this.state = {
+        id: 0,
+        comment: '',
+        comments: []
+    };
+}
 
-   state = {
-            comment: '',
-            comments: [],
-            num:0
-        };
-   
+    handleRemove = () => {
+        const { comments } = this.state;
+
+        this.setState({
+        comments : comments.filter(item => {
+        })}
+        );
+    }
 
     writeComment = e => {
         this.setState ({
             comment: e.target.value,
         })
-        //console.log(e.target.value);
     }
+
+    addReply = () => {
+        const {id, comment, comments} = this.state;
+        
+        this.setState({
+           comments: comments.concat({
+             comment: comment,
+             id: id + 1
+            }),
+            comment: '',
+            
+        });
+    }
+
 
     handleKeyPress = e =>{
         if(e.key === "Enter"){
@@ -35,33 +56,10 @@ class Main extends Component {
         }
     };
 
-    addReply = () => {
-        this.setState({
-           comments: this.state.comments.concat({
-             num: this.num++,
-             comment: this.state.comment,
-            }),
-            comment: '',
-        });
-    }
-
-   
-
-    handleRemove = this.state.num => {
-        const { comments } = this.state;
-        const nextComments = comments.filter((comment) => {
-                return comment.num !== num;
-            });
-        this.setState({
-            comments: nextComments
-        });
-}
 
 
     render() {
-        const { comments } = this.state;
-        return (
-           
+        return (   
             <div className="whole">
                 <header className="mainHeader">
                     <nav className="mainNav">
@@ -83,15 +81,15 @@ class Main extends Component {
                     <section className="feed">
                         <article className="viewStory">
                             <ul className="storyUl">
-                                {mainData.map((ele, index) =>{
+                                {mainData.map((data, index) =>{
                                     return (
                                         <li key={index} className="storyList">
                                             <div className="storyItem">
                                                 <button className="storyBtn">
                                                     <div className="storyPhoto">
-                                                        <img alt="no img" className="storyImg" src={ele.img} />
+                                                        <img alt="no img" className="storyImg" src={data.img} />
                                                     </div>
-                                                    <div className="storyUser">{ele.user}</div>
+                                                    <div className="storyUser">{data.user}</div>
                                                 </button>
                                             </div>
                                         </li>
@@ -144,14 +142,14 @@ class Main extends Component {
                                                 <FontAwesomeIcon icon={faTimes} className="time" />
                                             </div>
                                         </li>
-                                        {comments.map((text)=>{
+                                        {this.state.comments.map((text)=>{
                                             return(
                                                 <li className="reply" key={text.num}>
                                                     <div className="userName"> 동동</div>
                                                     <div className="userSentence">{text.comment}</div>
                                                     <div className="likeHeart">
                                                         <FontAwesomeIcon icon={faHeart} className="heart" />
-                                                        <button className= 'removeBtn' onClick= {this.handleRemove(text.num)}>
+                                                        <button className= 'removeBtn' onClick= {this.handleRemove}>
                                                         <FontAwesomeIcon icon={faTimes} className="time" />
                                                         </button>
                                                     </div>
@@ -171,10 +169,10 @@ class Main extends Component {
                                     <FontAwesomeIcon icon={faSmile} className="smile" />
                                 </div>
                                 <div className="inputComment">
-                                    <input className="addReply" type="text" placeholder="Add a comment" onChange={this.writeComment} onKeyPress={this.handleKeyPress} />
+                                    <input className="addReply" type="text" placeholder="Add a comment" onChange={this.writeComment} onKeyPress={this.handleKeyPress} value={this.state.comment}/>
                                 </div>
                                 <div className="post">
-                                    <button className="postBtn" type="button" onClick={this.addReply } >Post</button>
+                                    <button className="postBtn" type="button" onClick={ this.addReply } >Post</button>
                                 </div>
                             </div>
                         </article>

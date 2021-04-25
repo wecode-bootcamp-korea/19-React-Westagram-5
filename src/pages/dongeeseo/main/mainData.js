@@ -1,42 +1,34 @@
-import bicycle from 'images/donz/bicycle.jpg'
-import cafe from 'images/donz/cafe.jpg'
-import cat from 'images/donz/cat.jpg'
-import deco from 'images/donz/deco.jpg'
-import surfing from 'images/donz/surfing.jpg'
-import jeju from 'images/donz/jeju.jpg'
-import hoian from 'images/donz/hoian.jpg'
-
 const mainData = [
     {
-        img: {bicycle},
+        img: 'images/donz/bicycle.jpg',
         user: 'rider_209',
     },
     {
-        img: {cafe},
+        img: 'images/donz/cafe.jpg',
         user: 'coffee&cake',
     },
     {
-        img: {cat},
+        img:'images/donz/cat.jpg',
         user: 'imasupercute',
     },
     {
-        img: {deco},
+        img:'images/donz/deco.jpg',
         user: 'cafe_Palbang',
     },
     {
-        img: {hoian},
+        img: 'images/donz/surfing.jpg',
         user: 'doUwannaa',
     },
     {
-        img: {surfing},
+        img: 'images/donz/surfing.jpg',
         user: 'hamsik_surf',
     },
     {
-        img: {jeju},
+        img: 'images/donz/jeju.jpg',
         user: 'donZ_209',
     },
     {
-        img: {hoian},
+        img: 'images/donz/hoian.jpg',
         user: 'hoian~',
     },
 ];
