@@ -1,57 +1,117 @@
 import React from 'react' ;
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons';
 import './Login.scss';
 
 
-
-
 class Login extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            inputIdValue: '',
+            inputPwValue: '',
+        }       
+};
+handleIdInput = e => {
+    this.setState({
+        inputIdValue: e.target.value
+    })
+};
 
-    goToMain = () => {
-        this.props.history.push('/mainsd');
+handlePwInput = e => {
+    this.setState({
+        inputPwValue: e.target.value
+    })
+};
+
+goToMain = () => {
+    this.props.history.push('/mainsd');
+}
+
+       /* 백엔드와 통신할 때 사용
+        this.state = {
+            id: '',
+            pw: '',
+            name: 'hregre',
+            phone_number: '234234234'
+        }
     }
     
-    render() { 
+    changeValue = (e) => {
+        e.preventDefault();
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+   goToMain = () => {
+        // this.props.history.push('/mainsd');
+       fetch("http://10.58.2.36:8000/users/signin", {
+            method: "POST",
+            body: JSON.stringify({
+              email: this.state.id,
+              password: this.state.pw,
+              name: this.state.name,
+              phone_number: this.state.phone_number
+            })
+        })    
+            .then((response) => response.json())
+            .then((result) => {
+                console.log(result)
+                if(result.MESSAGE === 'SUCCESS'){
+                    alert('성공!!'); 
+                    localStorage.setItem('getToken', result.ACCESS_TOKEN)
+                    
+                    this.props.history.push('/mainsd');
+                } else{
+                    alert('바보');
+                }
+            }
+        );
+        */
+   
+
+    
+
+    render() {
+        const isBtnAble = this.state.inputIdValue.includes('@') && this.state.inputPwValue.length > 5 ? 'onColor':'offColor';
         return (
-       <>
-       <main>
-            <div className = "header">
-             <h1> Westagram </h1>
-            </div>
-            <form>
-                <input className = "Id" type = "text" placeholder = "Phone number, username, or email" />
-                <input className = "Pw" type = "password"  placeholder = "Password" />
-                <button className = "logInButton" type = "button" onClick={this.goToMain}>
-                Log In       
-                </button>
-            </form>
-            <div className = "orLine">
-                <div className = "sideLine"></div>
-                <div className = "orLetter"> OR </div>
-                <div className = "sideLine"></div>
-            </div>
-            <nav>
-                <div className = "facebook">
-                    <a href = "https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%25221m8wh6j1ptef7i1tvk8zls8sc991gu36x715dghvk15gfprp1gzar4i%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26locale%3Den_US%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dcca89f78-d25b-4d83-8e32-822d37821a88%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%25221m8wh6j1ptef7i1tvk8zls8sc991gu36x715dghvk15gfprp1gzar4i%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252F%2522%257D%23_%3D_&display=page&locale=ko_KR&pl_dbl=0">
-                            <i className="fab fa-facebook-square"></i>
-                            <span> Log in with Facebook </span>
-                    </a>
+       <div className = "login">
+            <main className = "inputUser">
+                <div className = "header">
+                    <h1> Westagram </h1>
                 </div>
-                <div className = "forgotPw">
-                    <Link to="/Main">Forgot password?</Link>
+                <form className = "inputUserInfo" onChange={this.changeValue}>
+                    <input className = "Id" name='id' type = "text" placeholder = "Phone number, username, or email" value = {this.state.inputIdValue} onChange = {this.handleIdInput} />
+                    <input className = "Pw" name='pw' type = "password"  placeholder = "Password" value = {this.state.inputPwValue} onChange = {this.handlePwInput} />
+                    <button className = {isBtnAble + " logInButton"} type = "button" onClick={this.goToMain}>
+                    Log In       
+                    </button>
+                </form>
+                <div className = "orLine">
+                    <div className = "sideLine"></div>
+                    <div className = "orLetter"> <Link to="/Mainsd">OR</Link> </div>
+                    <div className = "sideLine"></div>
                 </div>
-            </nav>
-        </main>    
-        <section className = "signUp">
-                <span> Don't have an account?
-                    <a href = "https://apps.apple.com/app/instagram/id389801252?vt=lo"> Sign up </a>
-                </span>
-        </section>
-        <form>
-            <div class = "getAppBox">
+                <nav>
+                    <div className = "facebook">
+                        <FontAwesomeIcon icon ={faFacebookSquare} className = "facebookIcon" />
+                        <span className = "loginFaceBook"> Log in with Facebook </span>
+                    </div>
+                    <div className = "forgotPw">
+                        <Link to="/Mainsd">Forgot password?</Link>
+                    </div>
+                </nav>
+            </main>    
+            <section className = "signUpTo">
+                    <span className = "DonHave"> Don't have an account?</span>
+                    <span className= "sign"> Sign up</span>
+            </section>
+            <form className = "getAppBox">
                 <div className = "getAppLetter">
-                    <a href = "https://apps.apple.com/app/instagram/id389801252?vt=lo"> Get the app. </a>
+                    <a href = "https://apps.apple.com/app/instagram/id389801252?vt=lo" className = "getA"> Get the app. </a>
                 </div>
                 <div className = "getAppStore">
                     <a className = "appleStore" href = "https://apps.apple.com/app/instagram/id389801252?vt=lo">
@@ -61,10 +121,9 @@ class Login extends React.Component {
                         <img alt="Available on Google Play" className= "play" src= "https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png"/>
                     </a>
                 </div>
-            </div>
-        </form>
-        </>
-        )
+            </form>
+        </div>
+        );
     }
 }
 
