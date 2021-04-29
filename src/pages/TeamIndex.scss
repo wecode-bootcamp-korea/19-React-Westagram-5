@@ -1,0 +1,22 @@
+#teamIndex{
+    h1{
+
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 25px;
+    }
+    li{
+        list-style: none;
+        margin-top: 25px;
+    }
+    button{
+        width: 80px;
+        height: 45px;
+        border: 1px solid black;
+        margin-left: 10px;
+    }
+}
